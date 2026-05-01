@@ -91,20 +91,21 @@ html, body {
 }
 
 body {
-  /* Kiosk: no selection, no callout, no overscroll */
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+/* Kiosk hardening only on /display */
+.kiosk-root {
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: transparent;
-  overscroll-behavior: none;
   touch-action: manipulation;
   overflow: hidden;
 }
 
-/* Disable double-tap zoom on iOS */
 html {
   -webkit-text-size-adjust: 100%;
-  touch-action: manipulation;
 }
 
 /* Low-spoon brightness signal (65%) */
@@ -233,3 +234,141 @@ html {
 
 /* Hide everything except grounding in freeze */
 .mode-freeze .freeze-hide { display: none; }
+
+/* ---------- Phase 2: Wiki + Brain shared utilities ---------- */
+
+/* App shell that lets the page scroll inside its own container */
+.app-shell {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* Wiki sidebar item base */
+.wiki-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 36px;
+}
+
+.wiki-nav-item:hover {
+  background: var(--mono-bg);
+}
+
+.wiki-nav-item.active {
+  background: var(--teal-light);
+  border-left-color: var(--teal);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.wiki-group-label {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  padding: 16px 14px 6px;
+}
+
+.wiki-search {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: var(--ink);
+  outline: none;
+}
+
+.wiki-search:focus {
+  border-color: var(--teal);
+}
+
+.ghost {
+  color: var(--ink-2);
+  opacity: 0.6;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.tab {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--ink-2);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: inherit;
+}
+
+.tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--teal);
+  font-weight: 500;
+}
+
+.freshness-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--amber-light);
+  color: #6B4012;
+}
+
+.still-accurate-btn {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: var(--mono-bg);
+  color: var(--ink-2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.still-accurate-btn:hover {
+  background: var(--teal-light);
+  color: #0F5E45;
+  border-color: var(--teal);
+}
+
+.critical-flag {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--coral-light);
+  color: #6B2A14;
+  font-size: 14px;
+  border-left: 3px solid var(--coral);
+}
