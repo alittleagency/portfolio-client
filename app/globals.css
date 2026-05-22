@@ -372,3 +372,12 @@ html {
   font-size: 14px;
   border-left: 3px solid var(--coral);
 }
+
+/* Hide scrollbar for horizontal scroll containers */
+.scroll-x-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll-x-hide::-webkit-scrollbar {
+  display: none;
+}
