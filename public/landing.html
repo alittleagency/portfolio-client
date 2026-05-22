@@ -1,0 +1,2519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>spoonstack · AI second brain for neurodivergent moms</title>
+<meta name="description" content="spoonstack is your second brain for mom life. it learns how you think, remembers what your family needs, and handles the mental load so you don't have to hold it all in your head. the more you use it, the better it knows you.">
+<meta name="keywords" content="mental load app, decision fatigue app, second brain for moms, default parent app, overwhelmed mom, AI for moms, mom brain app, family organizer app, mom productivity app, app to reduce mental load, AI tools for moms, summer schedule app for moms, mom burnout, external brain for moms, thinks like you do, calm the chaos, works with your brain">
+<meta name="author" content="Brittany May, A Little Agency">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://spoonstack.app">
+
+<!-- Open Graph -->
+<meta property="og:title" content="spoonstack · thinks like you do">
+<meta property="og:description" content="the mental load is real. spoonstack is your second brain for mom life. it learns how you think, remembers what matters, and handles the overhead so you can show up for the parts that actually need you.">
+<meta property="og:url" content="https://spoonstack.app">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="spoonstack">
+<meta property="og:image" content="https://spoonstack.app/og-image.png">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="spoonstack · thinks like you do">
+<meta name="twitter:description" content="the mental load is real. spoonstack handles the overhead: the decisions, the remembering, the figuring out what to say, so you don't have to carry it all in your head.">
+<meta name="twitter:image" content="https://spoonstack.app/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "spoonstack",
+  "description": "spoonstack is a second brain for moms. it learns how you think, remembers what your family needs, and handles the mental load so you don't have to hold it all in your head. the more you use it, the better it knows you.",
+  "url": "https://spoonstack.app",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": {
+    "@type": "Offer",
+    "price": "79",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "79",
+      "priceCurrency": "USD",
+      "unitCode": "ANN"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Brittany May",
+    "url": "https://alittleagency.com"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Mothers, default parents, moms carrying the mental load"
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF7;--card:#fff;--ink:#2C2C2A;--ink-2:#888780;--ink-3:#B4B2A9;
+  --border:#E8E6E0;--mono-bg:#F1EFE8;
+  --yellow:#DAAF2E;--yellow-l:#FDF6DC;--yellow-d:#6B4C00;
+  --teal:#1D9E75;--teal-l:#E1F5EE;
+  --purple:#8B6FE8;--purple-l:#EEEAFC;
+  --coral:#D85A30;--coral-l:#FAECE7;
+  --pink:#C4427A;--pink-l:#FBEAF0;
+  --lime:#A3D130;--lime-l:#EEF9D6;--lime-d:#3A5200;
+  --cyan:#0B8FA6;--cyan-l:#E0F5FA;
+  --hotpink:#E8399A;--plum:#4A3560;--plum-l:#EDEAF5;
+  --vault:#2A7A8C;--vault-l:#E0F2F7;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:200;background:rgba(250,250,247,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px;}
+.nav-logo{font-size:17px;font-weight:800;color:var(--ink);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink-2);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{background:var(--ink)!important;color:#fff!important;padding:7px 18px;border-radius:100px;font-weight:600!important;font-size:12px!important;}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:64px 24px 52px;max-width:720px;margin:0 auto;}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-bottom:22px;background:var(--teal-l);padding:5px 14px;border-radius:100px;border:1px solid rgba(29,158,117,.2);}
+.hero h1{font-size:clamp(40px,6.5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:22px;}
+.hero h1 em{font-style:normal;color:var(--yellow);}
+.hero-sub{font-size:18px;color:var(--ink-2);line-height:1.7;margin-bottom:38px;max-width:760px;text-align:center;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.hero-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#1A1200;font-weight:700;font-size:15px;padding:15px 30px;border-radius:100px;text-decoration:none;transition:transform .18s,box-shadow .18s;}
+.hero-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(218,175,46,.35);}
+.hero-btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink-2);font-weight:600;font-size:15px;padding:15px 30px;border-radius:100px;border:1.5px solid var(--border);text-decoration:none;transition:all .18s;}
+.hero-btn-ghost:hover{border-color:var(--ink-3);color:var(--ink);}
+.hero-proof{display:flex;align-items:center;gap:16px;margin-top:30px;font-size:12px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;flex-wrap:wrap;justify-content:center;}
+.how-section{padding:40px 24px;max-width:1080px;margin:0 auto;}
+.section-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px;text-align:center;}
+.section-title{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.08;text-align:center;margin-bottom:14px;}
+.section-sub{font-size:16px;color:var(--ink-2);text-align:center;line-height:1.75;max-width:680px;margin:0 auto 36px;}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.how-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px;position:relative;overflow:hidden;}
+.how-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.how-card:nth-child(1)::before{background:var(--yellow);}
+.how-card:nth-child(2)::before{background:var(--teal);}
+.how-card:nth-child(3)::before{background:var(--purple);}
+.how-num{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:14px;}
+.how-icon{font-size:28px;margin-bottom:12px;display:block;}
+.how-title{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:10px;}
+.how-body{font-size:13.5px;color:var(--ink-2);line-height:1.75;}
+.holds-section{background:var(--ink);padding:40px 24px;}
+.holds-inner{max-width:1080px;margin:0 auto;}
+.holds-title{font-size:clamp(26px,4vw,38px);font-weight:800;color:#FFFDF7;letter-spacing:-.025em;margin-bottom:10px;text-align:center;}
+.holds-sub{font-size:15px;color:rgba(255,255,255,.85);text-align:center;margin-bottom:52px;line-height:1.7;}
+.holds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.hold-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px;}
+.hold-icon{font-size:24px;margin-bottom:12px;}
+.hold-title{font-size:14px;font-weight:700;color:rgba(255,255,255,.82);margin-bottom:6px;}
+.hold-body{font-size:12.5px;color:rgba(255,255,255,.82);line-height:1.65;}
+.demo-section{max-width:1140px;margin:0 auto;padding:40px 24px 56px;}
+.demo-label{text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:14px;}
+.demo-intro{text-align:center;margin-bottom:24px;}
+.demo-intro h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:10px;letter-spacing:-.025em;}
+.demo-intro p{color:var(--ink-2);font-size:15px;line-height:1.7;}
+.tab-bar{display:flex;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:4px;margin:0 auto 32px;width:fit-content;max-width:100%;overflow-x:auto;scrollbar-width:none;}
+.tab-bar::-webkit-scrollbar{display:none;}
+.tab-btn{padding:10px 22px;border-radius:100px;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink-2);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.tab-btn:hover{color:var(--ink);background:var(--mono-bg);}
+.tab-btn.active{background:var(--ink);color:#fff;}
+.tab-panel{display:none;animation:fadeIn .25s ease;}
+.tab-panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.demo-chrome{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 40px rgba(0,0,0,.07),0 1px 4px rgba(0,0,0,.04);}
+.chrome-bar{background:#1A1917;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;}
+.chrome-dots{display:flex;gap:6px;}
+.chrome-dot{width:10px;height:10px;border-radius:50%;}
+.chrome-bar-title{font-size:12px;color:rgba(255,255,255,.9);font-family:'IBM Plex Mono',monospace;}
+.chrome-badge{font-size:10px;font-family:'IBM Plex Mono',monospace;padding:3px 10px;border-radius:100px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);}
+/* MORNING */
+.stack-header{background:var(--yellow);padding:20px 24px 16px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.stack-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;color:var(--yellow-d);background:rgba(0,0,0,.1);padding:3px 10px;border-radius:100px;margin-bottom:8px;display:inline-block;}
+.stack-title{font-size:22px;font-weight:800;color:var(--yellow-d);}
+.stack-meta{font-size:12px;color:rgba(107,76,0,.65);margin-top:3px;}
+.stack-time{font-family:'IBM Plex Mono',monospace;font-size:28px;color:var(--yellow-d);line-height:1;text-align:right;}
+.stack-date-small{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(107,76,0,.5);text-align:right;margin-top:3px;}
+.spoon-meter{background:rgba(0,0,0,.08);padding:12px 24px;display:flex;align-items:center;gap:10px;}
+.spoon-label{font-size:10px;font-weight:700;color:var(--yellow-d);font-family:'IBM Plex Mono',monospace;letter-spacing:.08em;}
+.spoon-pips{display:flex;gap:4px;}
+.pip{width:20px;height:8px;border-radius:100px;background:rgba(0,0,0,.12);}
+.pip.on{background:var(--yellow-d);}
+.spoon-note{font-size:11px;color:rgba(107,76,0,.6);margin-left:auto;font-style:italic;}
+.widget-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);}
+.widget-cell{padding:16px 20px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;position:relative;}
+.widget-cell:nth-child(even){border-right:none;}
+.widget-cell:hover{background:#FDFBF5;}
+.widget-cell::after{content:'expand ↗';position:absolute;top:14px;right:16px;font-size:9px;font-family:'IBM Plex Mono',monospace;color:var(--ink-3);opacity:0;transition:opacity .15s;letter-spacing:.04em;}
+.widget-cell:hover::after{opacity:1;}
+.widget-name{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.widget-one{font-size:11px;color:var(--ink-2);margin-bottom:10px;}
+.wout{background:var(--mono-bg);border-radius:8px;padding:10px 12px;font-size:12.5px;color:var(--ink);line-height:1.65;}
+.wout-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:6px;}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
+.tag{display:inline-block;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:600;}
+.t-do{background:#DCEFD6;color:#1E5C10;}
+.t-flag{background:var(--coral-l);color:var(--coral);}
+.t-star{background:var(--yellow-l);color:var(--yellow-d);}
+.t-muted{background:var(--mono-bg);color:var(--ink-3);border:1px solid var(--border);}
+/* WIKI */
+.wiki-layout{display:grid;grid-template-columns:200px 1fr;min-height:580px;}
+.wiki-sidebar{background:#F5F3EC;border-right:1px solid var(--border);padding:12px 0;}
+.wiki-search-wrap{padding:0 10px 10px;}
+.wiki-search{width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:7px 10px;font-size:12px;font-family:'DM Sans',sans-serif;color:var(--ink);outline:none;}
+.wiki-search::placeholder{color:var(--ink-3);}
+.wiki-section-label{padding:8px 16px 3px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);}
+.wiki-item{padding:7px 16px;font-size:13px;color:var(--ink-2);cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .15s;border-left:3px solid transparent;}
+.wiki-item:hover{background:rgba(0,0,0,.03);color:var(--ink);}
+.wiki-item.active{background:rgba(29,158,117,.07);color:var(--teal);border-left-color:var(--teal);font-weight:600;}
+.wiki-item .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.wiki-content{padding:22px 26px;overflow-y:auto;max-height:580px;}
+.wiki-page{display:none;}
+.wiki-page.active{display:block;}
+.wiki-page-title{font-size:20px;font-weight:800;margin-bottom:3px;}
+.wiki-page-meta{font-size:11px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.wh{font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin:18px 0 8px;}
+.wblock{background:var(--mono-bg);border-radius:10px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.75;margin-bottom:10px;}
+.wblock p{margin-bottom:5px;}
+.wblock p:last-child{margin:0;}
+.sys-row{display:grid;grid-template-columns:22px 100px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;align-items:flex-start;}
+.sys-row:last-child{border-bottom:none;}
+.sys-icon{font-size:14px;}
+.sys-label{font-weight:700;color:var(--ink);}
+.sys-val{color:var(--ink-2);font-size:12.5px;line-height:1.6;}
+.person-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:8px;display:flex;gap:12px;align-items:flex-start;}
+.person-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.person-name{font-size:14px;font-weight:700;margin-bottom:3px;}
+.person-note{font-size:12px;color:var(--ink-2);line-height:1.55;}
+/* BRAIN */
+.brain-wrap{background:#F5F0E8;min-height:580px;display:grid;grid-template-columns:210px 1fr;}
+.brain-sidebar{border-right:1px solid rgba(255,255,255,.06);padding:14px;}
+.brain-search{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:8px 12px;font-size:12px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.75);outline:none;margin-bottom:12px;}
+.brain-search::placeholder{color:var(--ink-3);}
+.brain-domain-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:6px;margin-top:10px;}
+.brain-domain-item{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:6px;cursor:pointer;transition:background .15s;}
+.brain-domain-item:hover,.brain-domain-item.on{background:var(--mono-bg);}
+.brain-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.brain-domain-name{font-size:12px;color:var(--ink-2);flex:1;}
+.brain-domain-count{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-3);}
+.brain-main{display:flex;flex-direction:column;}
+.brain-topbar{padding:13px 18px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;}
+.brain-view-title{font-size:13px;font-weight:600;color:rgba(255,255,255,.9);}
+.brain-view-meta{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.2);}
+.brain-entries{padding:14px 18px;overflow-y:auto;max-height:530px;}
+.brain-entry{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:13px 15px;margin-bottom:8px;cursor:pointer;transition:all .15s;}
+.brain-entry:hover,.brain-entry.open{border-color:rgba(255,255,255,.75);background:var(--mono-bg);}
+.brain-entry.featured{border-color:rgba(218,175,46,.35);background:rgba(218,175,46,.04);}
+.be-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.be-dp{display:flex;align-items:center;gap:5px;}
+.be-dot{width:6px;height:6px;border-radius:50%;}
+.be-domain-txt{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-3);}
+.be-date{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-3);}
+.be-title{font-size:13px;font-weight:600;color:rgba(255,255,255,.82);margin-bottom:5px;line-height:1.4;}
+.be-body{font-size:12px;color:rgba(255,255,255,.82);line-height:1.65;}
+.be-links{display:flex;gap:5px;margin-top:9px;flex-wrap:wrap;}
+.be-link{font-size:10px;padding:2px 8px;border-radius:100px;background:var(--teal-l);color:var(--teal);border:1px solid rgba(29,158,117,.2);font-weight:600;}
+.be-source{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.2);margin-top:6px;}
+/* SCAN */
+.scan-wrap{display:grid;grid-template-columns:1fr 1.4fr;min-height:580px;}
+.scan-left{padding:28px;border-right:1px solid var(--border);}
+.scan-right{padding:28px;background:var(--card);}
+.scan-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:14px;}
+.scan-title{font-size:22px;font-weight:800;letter-spacing:-.01em;margin-bottom:8px;line-height:1.15;}
+.scan-sub{font-size:13px;color:var(--ink-2);line-height:1.7;margin-bottom:24px;}
+.scan-method{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;}
+.scan-method-icon{font-size:18px;width:28px;text-align:center;flex-shrink:0;}
+.scan-method strong{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.scan-method span{font-size:11px;color:var(--ink-3);}
+.scan-example-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:8px;}
+.scan-img{background:#E8E4DC;border-radius:8px;height:100px;display:flex;align-items:center;justify-content:center;font-size:32px;color:#BBB;margin-bottom:10px;border:1px dashed #CCC;}
+.scan-loading{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;margin-bottom:12px;}
+.sl-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse .8s ease infinite;}
+.sl-dot:nth-child(2){animation-delay:.2s;}
+.sl-dot:nth-child(3){animation-delay:.4s;}
+@keyframes pulse{0%,100%{opacity:.2;transform:scale(.8);}50%{opacity:1;transform:scale(1);}}
+.review-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.rc-head{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--card);}
+.rc-lbl{font-size:11px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;}
+.rc-domain{font-size:10px;padding:2px 10px;border-radius:100px;background:var(--teal-l);color:var(--teal);font-weight:600;}
+.rc-body{padding:14px;}
+.rc-field{margin-bottom:11px;}
+.rc-field-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:5px;}
+.rc-field-val{font-size:13px;color:var(--ink);background:var(--card);border:1px dashed var(--border);border-radius:8px;padding:8px 10px;line-height:1.5;}
+.rc-bullets{list-style:none;padding:0;}
+.rc-bullets li{font-size:12px;color:var(--ink-2);padding:3px 0;padding-left:12px;position:relative;line-height:1.5;}
+.rc-bullets li::before{content:'·';position:absolute;left:0;color:var(--ink-3);}
+.rc-actions{display:flex;gap:8px;padding:0 14px 10px;}
+.rc-btn{flex:1;padding:9px;border-radius:100px;border:none;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.rc-btn-p{background:var(--ink);color:#fff;}
+.rc-btn-g{background:transparent;border:1.5px solid var(--border);color:var(--ink-2);}
+.rc-dismiss{font-size:11px;color:var(--ink-3);text-align:center;display:block;padding-bottom:12px;}
+/* WIDGET */
+.widget-exp-wrap{display:grid;grid-template-columns:1fr 1.65fr;min-height:580px;}
+.w-left{padding:24px;border-right:1px solid var(--border);}
+.w-right{padding:24px;background:var(--bg);}
+.w-section-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:12px;}
+.stack-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:600;background:var(--cyan-l);color:var(--cyan);margin-bottom:16px;}
+.stack-chip-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);}
+.w-title{font-size:19px;font-weight:800;margin-bottom:5px;}
+.w-one{font-size:13px;color:var(--ink-2);margin-bottom:18px;line-height:1.6;}
+.prompt-box{background:var(--mono-bg);border-radius:10px;padding:14px;margin-bottom:16px;}
+.prompt-box-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:7px;}
+.prompt-text{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2);line-height:1.8;}
+.run-btn{width:100%;padding:12px;border-radius:100px;border:none;background:var(--cyan);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .15s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.run-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 14px rgba(11,143,166,.35);}
+.run-btn:disabled{opacity:.6;cursor:not-allowed;}
+.w-context-box{margin-top:16px;padding:12px;background:var(--mono-bg);border-radius:10px;font-size:12px;color:var(--ink-2);line-height:1.65;}
+.w-context-box p{margin-top:5px;}
+.resp-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);}.resp-widget-name{font-size:16px;font-weight:800;color:var(--ink);}
+.resp-badge{font-size:10px;font-family:'IBM Plex Mono',monospace;padding:3px 10px;border-radius:100px;background:var(--teal-l);color:var(--teal);font-weight:600;}
+.resp-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:300px;color:var(--ink-3);text-align:center;gap:12px;}
+.resp-empty-icon{font-size:34px;}
+.resp-empty-text{font-size:13px;font-family:'IBM Plex Mono',monospace;}
+.resp-empty-sub{font-size:12px;}
+.r-block{font-size:13px;line-height:1.75;}
+.r-section{margin-bottom:16px;}
+.r-heading{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:8px;font-family:'IBM Plex Mono',monospace;}
+.r-prose{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;line-height:1.75;margin-bottom:8px;}
+.r-item{display:flex;align-items:flex-start;gap:8px;padding:9px 11px;border-radius:8px;background:var(--card);border:1px solid var(--border);margin-bottom:5px;}
+.r-item-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
+.r-item-text{flex:1;line-height:1.5;}
+.r-badge{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 7px;border-radius:100px;flex-shrink:0;align-self:flex-start;margin-top:2px;}
+.rb-now{background:#DCEFD6;color:#1E5C10;}
+.rb-flag{background:var(--coral-l);color:var(--coral);}
+.rb-fast{background:var(--cyan-l);color:var(--cyan);}
+.r-code{background:var(--mono-bg);border-radius:8px;padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2);line-height:1.7;}
+.resp-footer{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);font-size:11px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;display:flex;justify-content:space-between;}
+/* WAITLIST */
+.waitlist-section{padding:100px 24px;text-align:center;background:var(--ink);}
+.waitlist-inner{max-width:540px;margin:0 auto;}
+.waitlist-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px;}
+.waitlist-title{font-size:clamp(30px,5vw,46px);font-weight:800;color:#FFFDF7;letter-spacing:-.03em;line-height:1.08;margin-bottom:14px;}
+.waitlist-sub{font-size:16px;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:24px;}
+.waitlist-form-wrap{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;}
+footer{background:#F5F0E8;color:var(--ink-2);text-align:center;padding:44px 24px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:2.2;}
+footer a{color:var(--ink-2);text-decoration:none;}
+footer a:hover{color:rgba(255,255,255,.85);}
+.footer-logo{font-size:16px;font-weight:800;color:rgba(255,255,255,.75);font-family:'DM Sans',sans-serif;margin-bottom:6px;}
+
+/* WIDGET MODAL */
+.wmodal-overlay{position:fixed;inset:0;background:rgba(20,18,14,.72);backdrop-filter:blur(6px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .2s;}
+.wmodal-overlay.open{opacity:1;pointer-events:all;}
+.wmodal{background:var(--card);border-radius:22px;max-width:680px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.25),0 4px 16px rgba(0,0,0,.1);animation:modalIn .25s ease;}
+@keyframes modalIn{from{transform:translateY(16px) scale(.97);opacity:0;}to{transform:none;opacity:1;}}
+.wmodal-header{padding:22px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;}
+.wmodal-title-wrap{}
+.wmodal-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;}
+.wmodal-title{font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--ink);}
+.wmodal-sub{font-size:13px;color:var(--ink-2);margin-top:4px;line-height:1.6;}
+.wmodal-close{width:32px;height:32px;border-radius:50%;border:none;background:var(--mono-bg);color:var(--ink-2);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s;}
+.wmodal-close:hover{background:var(--border);}
+.wmodal-body{padding:20px 24px 24px;}
+.wmodal-section{margin-bottom:20px;}
+.wmodal-section-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:8px;}
+.wmodal-output{background:var(--mono-bg);border-radius:12px;padding:16px;font-size:13.5px;color:var(--ink);line-height:1.75;}
+.wmodal-row{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
+.wmodal-row:last-child{border-bottom:none;}
+.wmodal-row-icon{font-size:16px;flex-shrink:0;width:24px;}
+.wmodal-row-label{font-weight:700;font-size:13px;min-width:100px;flex-shrink:0;}
+.wmodal-row-val{font-size:13px;color:var(--ink-2);line-height:1.6;flex:1;}
+.wmodal-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;}
+.wmodal-tag{padding:3px 10px;border-radius:100px;font-size:11px;font-weight:600;}
+.wmt-do{background:#DCEFD6;color:#1E5C10;}
+.wmt-flag{background:var(--coral-l);color:var(--coral);}
+.wmt-star{background:var(--yellow-l);color:var(--yellow-d);}
+.wmt-muted{background:var(--mono-bg);color:var(--ink-3);border:1px solid var(--border);}
+.wmt-purple{background:var(--purple-l);color:var(--purple);}
+.wmt-teal{background:var(--teal-l);color:var(--teal);}
+.wmodal-divider{height:1px;background:var(--border);margin:16px 0;}
+.wmodal-hint{font-size:11px;color:var(--ink-3);line-height:1.65;padding:10px 12px;background:var(--mono-bg);border-radius:8px;font-family:'IBM Plex Mono',monospace;}
+.wmodal-spoon-row{display:flex;gap:8px;margin-top:10px;}
+.wmodal-spoon-card{flex:1;border-radius:10px;padding:10px 12px;}
+.wsc-low{background:#FEF6E4;border:.5px solid rgba(218,175,46,.2);}
+.wsc-crisis{background:var(--coral-l);border:.5px solid rgba(216,90,48,.15);}
+.wsc-lbl{font-size:9px;font-family:'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;}
+.wsc-low .wsc-lbl{color:#8A5C00;}
+.wsc-crisis .wsc-lbl{color:var(--coral);}
+.wsc-body{font-size:11px;line-height:1.6;}
+.wsc-low .wsc-body{color:#6B4A00;}
+.wsc-crisis .wsc-body{color:#8B3010;}
+
+/* BRAIN — ZETTELKASTEN */
+.brain-wrap{background:#F5F0E8;min-height:600px;display:grid;grid-template-columns:220px 1fr;}
+.brain-sidebar{border-right:1px solid rgba(44,40,32,.1);padding:14px;overflow-y:auto;background:#EDE8DC;}
+.brain-search{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:8px 12px 8px 32px;font-size:12px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.75);outline:none;margin-bottom:14px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,.25)' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:10px center;}
+.brain-search::placeholder{color:var(--ink-3);}
+.brain-tag-cloud{margin-bottom:14px;}
+.brain-tag-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;}
+.brain-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:100px;font-size:10px;background:rgba(44,40,32,.06);border:1px solid rgba(44,40,32,.12);color:var(--ink-2);cursor:pointer;margin:0 4px 4px 0;transition:all .15s;}
+.brain-tag:hover,.brain-tag.on{background:var(--teal);color:#fff;border-color:var(--teal);}
+.brain-tag-dot{width:5px;height:5px;border-radius:50%;}
+.brain-domain-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;margin-top:14px;}
+.brain-domain-item{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:6px;cursor:pointer;transition:background .15s;}
+.brain-domain-item:hover,.brain-domain-item.on{background:var(--mono-bg);}
+.brain-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.brain-domain-name{font-size:12px;color:var(--ink-2);flex:1;}
+.brain-domain-count{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-3);}
+.brain-main{display:flex;flex-direction:column;overflow:hidden;background:#F5F0E8;}
+.brain-topbar{padding:12px 16px;border-bottom:1px solid rgba(44,40,32,.1);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+.brain-view-title{font-size:12px;font-weight:600;color:var(--ink-2);}
+.brain-view-meta{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-3);}
+.brain-capture-bar{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid rgba(44,40,32,.1);flex-shrink:0;flex-wrap:wrap;}
+.bcb-btn{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:6px;border:1.5px solid var(--border);background:#fff;font-size:11px;color:var(--ink-2);cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;border-radius:100px;transition:all .15s;}
+.bcb-btn:hover{background:var(--teal);color:#fff;border-color:var(--teal);}
+.bcb-icon{font-size:12px;}
+.brain-entries{padding:12px 16px;overflow-y:auto;flex:1;}
+.brain-entry{background:#fff;border:1px solid rgba(44,40,32,.1);border-radius:10px;padding:12px 14px;margin-bottom:7px;cursor:pointer;transition:all .15s;box-shadow:0 1px 4px rgba(44,40,32,.04);}
+.brain-entry:hover{border-color:rgba(255,255,255,.13);background:var(--mono-bg);}
+.brain-entry.featured{border-color:var(--yellow);background:var(--yellow-l);}
+.brain-entry.open{border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.06);}
+.be-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:5px;gap:8px;}
+.be-dp{display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+.be-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.be-domain-txt{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-3);}
+.be-date{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.75);flex-shrink:0;}
+.be-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;line-height:1.35;}
+.be-body{font-size:11.5px;color:var(--ink-2);line-height:1.6;}
+.be-tags{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap;}
+.be-tag{font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.07);cursor:pointer;}
+.be-tag:hover{background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);}
+.be-source{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-3);margin-top:7px;display:flex;align-items:center;gap:5px;}
+.be-links{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap;}
+.be-link{font-size:10px;padding:2px 8px;border-radius:100px;background:var(--teal-l);color:var(--teal);border:1px solid rgba(29,158,117,.2);font-weight:600;}
+/* SCAN CAPTURE METHODS — expanded */
+.capture-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
+.capture-btn{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 12px;background:var(--card);border:1px solid var(--border);border-radius:12px;cursor:pointer;transition:all .15s;text-align:center;}
+.capture-btn:hover{border-color:var(--ink-3);background:var(--mono-bg);}
+.capture-btn-icon{font-size:22px;}
+.capture-btn-label{font-size:12px;font-weight:700;color:var(--ink);}
+.capture-btn-sub{font-size:10px;color:var(--ink-3);line-height:1.4;}
+.capture-email-row{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--mono-bg);border-radius:10px;margin-bottom:16px;}
+.capture-email-icon{font-size:16px;}
+.capture-email-addr{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2);flex:1;}
+.capture-copy-btn{font-size:10px;padding:3px 10px;border-radius:100px;border:1px solid var(--border);background:var(--card);color:var(--ink-2);cursor:pointer;font-family:'DM Sans',sans-serif;}
+
+@media(max-width:720px){
+  .phone-grid{grid-template-columns:1fr!important;}
+  .widget-lib-grid{grid-template-columns:1fr 1fr!important;}
+  .privacy-grid{grid-template-columns:1fr!important;}
+  .stacks-grid{grid-template-columns:1fr 1fr!important;}
+  .tab-scroll-hint{display:block!important;}
+  .tab-bar{border-radius:16px;flex-wrap:wrap;justify-content:center;padding:4px;width:100%;gap:4px;}
+  .tab-btn{font-size:12px;padding:7px 11px;flex-shrink:0;flex-grow:1;text-align:center;min-width:0;}
+
+  .nav-links{display:none;}
+  .hero{padding:44px 20px 36px;}
+  .how-grid,.holds-grid{grid-template-columns:1fr;}
+  .wiki-layout{grid-template-columns:1fr;}
+  .wiki-sidebar{display:none;}
+  .widget-grid{grid-template-columns:1fr;}
+  .widget-exp-wrap,.scan-wrap{grid-template-columns:1fr;}
+  .w-right,.scan-right{display:none;}
+  .brain-wrap{grid-template-columns:1fr;}
+  .brain-sidebar{display:none;}
+}
+@media(max-width:900px){
+  .widget-screenshots-grid-3{grid-template-columns:1fr!important;}
+  .widget-screenshots-grid-2{grid-template-columns:1fr!important;}
+}
+@media(max-width:600px){
+  .tab-bar{padding:3px;gap:2px;}
+  .tab-btn{padding:6px 10px;font-size:11px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">spoonstack</div>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#demo">See the demo</a>
+    <a href="https://buy.stripe.com/cNicN54Vo8hSbox2Ok3ZK00" target="_blank" class="nav-cta">Get early access</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">built for the way your brain actually works.</div>
+  <h1>thinks like you do.<br><em>gets better every time you use it.</em></h1>
+  <p class="hero-sub">if you're AuDHD, ADHD, autistic, or just neurodivergent enough that every other app has failed you, spoonstack was built for your brain. it learns how you actually think, holds everything you can't, and gets better every time you use it.</p>
+  <div class="hero-btns">
+    <a href="https://buy.stripe.com/cNicN54Vo8hSbox2Ok3ZK00" target="_blank" class="hero-btn">Get early access for $79/year →</a>
+    <a href="#demo" class="hero-btn-ghost">▶ See it in action</a>
+  </div>
+  <div class="hero-proof">
+    <span>🧠 your second brain</span>
+    <span>·</span>
+    <span>knows your whole family</span>
+    <span>·</span>
+    <span>gets smarter every day</span>
+  </div>
+  <div style="margin-top:32px;background:var(--teal-l);border:1px solid rgba(29,158,117,.2);border-radius:16px;padding:20px 26px;max-width:560px;text-align:center;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;">coming from spoony?</div>
+    <div style="font-size:14px;color:var(--ink);line-height:1.75;">spoony is shutting down. if you're looking for a new home for your neurodivergent brain, this is it. spoonstack is different from spoony (it's a second brain, not a social community) but it was built for exactly the same people. welcome.</div>
+  </div>
+  <div style="margin-top:14px;max-width:560px;text-align:center;">
+    <div style="font-size:12px;color:var(--ink-2);line-height:1.75;">why spoonstack? spoon theory, coined by christine miserandino, describes energy as a finite daily resource. neurodivergent people start each day with fewer spoons and spend more of them on things that are free for neurotypical people. spoonstack helps you spend yours on what actually matters.</div>
+  </div>
+</section>
+
+<section class="how-section" id="how">
+  <div class="section-eyebrow">How it works</div>
+  <h2 class="section-title">not another productivity app.</h2>
+  <p class="section-sub">most productivity apps were built for neurotypical brains on good days. spoonstack was built for your actual brain, on your actual days. it handles the parts that cost you the most, learns your patterns, and adjusts when you're running low.</p>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">Step 01</div>
+      <div class="how-icon">✦</div>
+      <div class="how-title">tell it how you're doing today</div>
+      <div class="how-body">check in each morning. a lot of energy, a little, or running on empty. spoonstack adjusts. gentler when you're depleted. more direct when you have capacity. low spoons mode collapses everything down to only what you actually need right now.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">Step 02</div>
+      <div class="how-icon">✦</div>
+      <div class="how-title">it handles the overhead</div>
+      <div class="how-body">the decision fatigue. the figuring out what to say. the "I know what I need to do but I can't make myself start." spoonstack handles the parts that cost you the most. not the task itself, but everything around it that drains you before you even begin.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">Step 03</div>
+      <div class="how-icon">🧠</div>
+      <div class="how-title">it builds your second brain</div>
+      <div class="how-body">school schedules, family preferences, the things only you know about each kid. scan a permission slip, forward an email, speak a thought. it captures everything, files it, and learns from it. your memory, outside your head. and it gets smarter every time you use it.</div>
+    </div>
+  </div>
+</section>
+
+<section class="holds-section">
+  <div class="holds-inner">
+    <h2 class="holds-title">your memory, outside your head.</h2>
+    <p class="holds-sub">everything you're carrying about your family, organized, searchable, and ready when you need it. the more you add, the smarter it gets.</p>
+    <div class="holds-grid">
+      <div class="hold-card">
+        <div class="hold-icon">🧩</div>
+        <div class="hold-title">handles the mental load</div>
+        <div class="hold-body">the decisions, the planning, the remembering. spoonstack externalizes the parts that drain you most. not just a to-do list. the actual overhead that lives in your head.</div>
+      </div>
+      <div class="hold-card">
+        <div class="hold-icon">👨‍👩‍👧‍👦</div>
+        <div class="hold-title">knows your family</div>
+        <div class="hold-body">school schedules, what each kid will and won't eat, who needs what kind of approach. every widget knows your family. you never repeat yourself.</div>
+      </div>
+      <div class="hold-card">
+        <div class="hold-icon">📷</div>
+        <div class="hold-title">capture anything</div>
+        <div class="hold-body">permission slip, random thought, appointment confirmation. point your camera, speak it, forward an email. it lands in your brain, filed, searchable forever.</div>
+      </div>
+      <div class="hold-card">
+        <div class="hold-icon">📈</div>
+        <div class="hold-title">learns your actual hacks</div>
+        <div class="hold-body">the oven mitt trick. the timer for the bad feeling. the thing that works for you that nobody else would think of. spoonstack captures what works and surfaces it back when your patterns say you need it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WIDGET SCREENSHOTS -->
+<section style="padding:40px 24px;max-width:1140px;margin:0 auto;">
+  <div class="section-eyebrow">real outputs · real family · real relief</div>
+  <h2 class="section-title">this is what it actually does.</h2>
+  <p class="section-sub">every widget knows your family. every output is specific to your situation. not a template. the actual thing you needed, ready to use.</p>
+
+  <!-- Row 1: 3 widgets -->
+  <div class="widget-screenshots-grid-3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:8px;">
+
+    <!-- ONE HARD THING -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(44,40,32,.06);">
+      <div style="height:5px;background:var(--yellow);"></div>
+      <div style="padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+          <span style="font-size:18px;">📞</span>
+          <span style="font-size:15px;font-weight:800;color:var(--ink);">One Hard Thing</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink-2);margin-bottom:14px;line-height:1.5;">The task that has been sitting there 11 days. spoonstack scripts the opener so you don't freeze on the call.</div>
+
+        <div style="background:var(--coral-l);border-radius:8px;padding:8px 12px;margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+          <span style="font-size:14px;">⏰</span>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--coral);text-transform:uppercase;letter-spacing:.06em;">Sitting there 11 days</div>
+            <div style="font-size:12px;font-weight:600;color:var(--ink);">Book the couples therapy intake session</div>
+          </div>
+        </div>
+
+        <div style="background:#F4F9EC;border:1px solid #C8E89A;border-radius:10px;padding:12px 14px;margin-bottom:8px;">
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:6px;">
+            <span style="font-size:10px;">✦</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#3A6000;text-transform:uppercase;letter-spacing:.06em;">AI wrote this for you</span>
+          </div>
+          <div style="font-size:12.5px;color:#2A4A00;font-style:italic;line-height:1.65;">"Hi, I'm calling to book an intake appointment for couples therapy. Do you have anything available in the next two weeks?"</div>
+        </div>
+        <div style="font-size:11px;color:var(--ink-3);line-height:1.5;">If you freeze, say: "I don't know where to start. Can you walk me through it?"</div>
+
+        <div style="display:flex;gap:6px;margin-top:14px;flex-wrap:wrap;">
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--yellow);color:#1A1200;font-weight:700;cursor:pointer;">📋 Copy script</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--yellow-l);color:var(--yellow-d);cursor:pointer;">📧 Email instead</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--yellow-l);color:var(--yellow-d);cursor:pointer;">👤 Delegate to Damon</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DINNER DECIDER -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(44,40,32,.06);">
+      <div style="height:5px;background:var(--yellow);"></div>
+      <div style="padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+          <span style="font-size:18px;">🍳</span>
+          <span style="font-size:15px;font-weight:800;color:var(--ink);">What's For Dinner</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink-2);margin-bottom:14px;line-height:1.5;">answers the 5pm question at 8am. knows what everyone will and won't eat and gives you a real answer, not a list of options.</div>
+
+        <div style="background:var(--mono-bg);border-radius:8px;padding:8px 12px;margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+          <span style="font-size:14px;">🧠</span>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">Iris: plain only, no mixed textures · Lily: pureed only · Zoe + Lily: anything</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;">
+          <div style="border:2px solid var(--yellow);background:var(--yellow-l);border-radius:10px;padding:10px 12px;position:relative;">
+            <div style="position:absolute;top:-8px;right:10px;background:var(--yellow);color:#1A1200;font-size:9px;font-weight:700;padding:2px 8px;border-radius:100px;font-family:'IBM Plex Mono',monospace;">PICK THIS</div>
+            <div style="font-size:13px;font-weight:700;color:var(--ink);">Pasta with butter</div>
+            <div style="font-size:10px;color:var(--ink-2);margin-top:2px;">Everyone eats it · 10 min · nothing to decide</div>
+          </div>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:10px 12px;">
+            <div style="font-size:12px;font-weight:600;color:var(--ink);">Sheet pan chicken + rice</div>
+            <div style="font-size:10px;color:var(--ink-2);margin-top:2px;">Everyone eats it · 15 min</div>
+          </div>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:10px 12px;">
+            <div style="font-size:12px;font-weight:600;color:var(--ink);">Quesadillas + apple slices</div>
+            <div style="font-size:10px;color:var(--ink-2);margin-top:2px;">8 min · no mixing · works for everyone</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--yellow);color:#1A1200;font-weight:700;cursor:pointer;">Lock this in</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--yellow-l);color:var(--yellow-d);cursor:pointer;">Step by step</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--yellow-l);color:var(--yellow-d);cursor:pointer;">Send to Damon</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTNER BRIEF -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(44,40,32,.06);">
+      <div style="height:5px;background:var(--yellow);"></div>
+      <div style="padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+          <span style="font-size:18px;">💬</span>
+          <span style="font-size:15px;font-weight:800;color:var(--ink);">Partner Update</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink-2);margin-bottom:14px;line-height:1.5;">So they don't text at 3pm asking what you already said. Written from your Brain, ready to send.</div>
+
+        <div style="background:#0B7A5C;border-radius:13px 13px 13px 3px;padding:13px 15px;font-size:12.5px;color:#fff;line-height:1.7;margin-bottom:4px;">
+          Hey babe. Last week of school recap: Lily and Iris need red shirts Monday. Thursday, Iris has the play at 6pm, Lily needs you or a sitter. Don't forget to eat something before 11. Love you.
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-3);margin-bottom:14px;display:flex;align-items:center;gap:4px;">
+          <span>✦</span> Written by spoonstack from your Brain data
+        </div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--teal);color:#fff;font-weight:700;cursor:pointer;">Send now</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--teal-l);color:var(--teal);cursor:pointer;">Make it funnier</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--teal-l);color:var(--teal);cursor:pointer;">Shorter</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--teal-l);color:var(--teal);cursor:pointer;">Save</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Row 2: 3 more widgets -->
+  <div class="widget-screenshots-grid-3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:16px;">
+
+    <!-- BRAIN DUMP + SORT -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(44,40,32,.06);">
+      <div style="height:5px;background:var(--yellow);"></div>
+      <div style="padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+          <span style="font-size:18px;">🧹</span>
+          <span style="font-size:15px;font-weight:800;color:var(--ink);">Get It Out of Your Head</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink-2);margin-bottom:14px;line-height:1.5;">Type everything in your head. spoonstack reads it and sorts it automatically so nothing gets lost.</div>
+
+        <div style="background:var(--mono-bg);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:6px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">You typed this morning</div>
+          <div style="font-size:12.5px;color:var(--ink-2);font-style:italic;line-height:1.65;">twins red shirts monday, marcus jr play thursday 6pm, deshawn needs sitter thursday, belated mothers day dinner sunday at sil house, book fathers day reservation, camp for deshawn first 2 weeks july, eat snack by 11</div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:6px;margin:8px 0 10px;padding:6px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+          <span style="font-size:12px;color:var(--ink-3);">✦</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-3);">spoonstack sorted 7 items automatically</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:var(--coral-l);">
+            <span style="font-size:11px;">👕</span>
+            <span style="font-size:11px;color:var(--ink);flex:1;">Twins: red shirts Monday</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--coral);font-weight:600;">Today</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:var(--coral-l);">
+            <span style="font-size:11px;">🎭</span>
+            <span style="font-size:11px;color:var(--ink);flex:1;">Iris play Thu 6pm + Lily sitter</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--coral);font-weight:600;">Thu</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:var(--yellow-l);">
+            <span style="font-size:11px;">🍽</span>
+            <span style="font-size:11px;color:var(--ink);flex:1;">Book Father's Day dinner reservation</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--yellow-d);font-weight:600;">This week</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:var(--teal-l);">
+            <span style="font-size:11px;">🏕</span>
+            <span style="font-size:11px;color:var(--ink);flex:1;">Lily camp July 1-14, find options</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--teal);font-weight:600;">Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHERE DID I PUT IT -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(44,40,32,.06);">
+      <div style="height:5px;background:var(--vault);"></div>
+      <div style="padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+          <span style="font-size:18px;">📍</span>
+          <span style="font-size:15px;font-weight:800;color:var(--ink);">The Out-of-Sight Tracker</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink-2);margin-bottom:14px;line-height:1.5;">Log it the moment you put it down. Find it when your brain won't cooperate. Tap Found it to clear.</div>
+
+        <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;">
+          <div style="border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:18px;flex-shrink:0;">👓</span>
+            <div style="flex:1;">
+              <div style="font-size:12px;font-weight:700;color:var(--ink);">Reading glasses</div>
+              <div style="font-size:10px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;">Kitchen counter · next to toaster · 2h ago</div>
+            </div>
+            <div style="font-size:10px;padding:5px 10px;border-radius:100px;background:var(--vault-l);color:var(--vault);font-weight:600;cursor:pointer;white-space:nowrap;">Found it</div>
+          </div>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:18px;flex-shrink:0;">🔑</span>
+            <div style="flex:1;">
+              <div style="font-size:12px;font-weight:700;color:var(--ink);">Car keys</div>
+              <div style="font-size:10px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;">Grey jacket · coat closet · yesterday</div>
+            </div>
+            <div style="font-size:10px;padding:5px 10px;border-radius:100px;background:var(--vault-l);color:var(--vault);font-weight:600;cursor:pointer;white-space:nowrap;">Found it</div>
+          </div>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:18px;flex-shrink:0;">📱</span>
+            <div style="flex:1;">
+              <div style="font-size:12px;font-weight:700;color:var(--ink);">Lily's iPad</div>
+              <div style="font-size:10px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;">Under Lily's bed · 3 days ago</div>
+            </div>
+            <div style="font-size:10px;padding:5px 10px;border-radius:100px;background:var(--vault-l);color:var(--vault);font-weight:600;cursor:pointer;white-space:nowrap;">Found it</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:6px;">
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--vault);color:#fff;font-weight:700;cursor:pointer;">+ Log something</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--vault-l);color:var(--vault);cursor:pointer;">Speak it</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRIENDSHIP ROLODEX -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(44,40,32,.06);">
+      <div style="height:5px;background:var(--hotpink);"></div>
+      <div style="padding:18px 20px;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+          <span style="font-size:18px;">💌</span>
+          <span style="font-size:15px;font-weight:800;color:var(--ink);">Friendship Rolodex</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink-2);margin-bottom:14px;line-height:1.5;">Remember the things that matter. Never forget a birthday, a gift, or what makes someone feel seen.</div>
+
+        <div style="background:var(--mono-bg);border-radius:12px;padding:14px;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--hotpink);color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">R</div>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:var(--ink);">Robin</div>
+              <div style="font-size:10px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;">Best friend · Last talked 3 days ago</div>
+            </div>
+            <div style="margin-left:auto;font-size:10px;padding:4px 9px;border-radius:100px;background:var(--coral-l);color:var(--coral);font-weight:600;font-family:'IBM Plex Mono',monospace;">Reach out</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <div style="display:flex;gap:8px;font-size:11px;color:var(--ink-2);padding:5px 0;border-bottom:0.5px solid var(--border);">
+              <span style="font-size:13px;">🎨</span>
+              <span>Fav color: pink · obsessed with purple lately</span>
+            </div>
+            <div style="display:flex;gap:8px;font-size:11px;color:var(--ink-2);padding:5px 0;border-bottom:0.5px solid var(--border);">
+              <span style="font-size:13px;">🎁</span>
+              <span>Gave purple sunglasses · Christmas 2025</span>
+            </div>
+            <div style="display:flex;gap:8px;font-size:11px;color:var(--ink-2);padding:5px 0;border-bottom:0.5px solid var(--border);">
+              <span style="font-size:13px;">💌</span>
+              <span>Writes the best thank you notes, always handwritten</span>
+            </div>
+            <div style="display:flex;gap:8px;font-size:11px;color:var(--ink-2);padding:5px 0;">
+              <span style="font-size:13px;">🎂</span>
+              <span>Birthday: March 14, coming up in 10 months</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--hotpink);color:#fff;font-weight:700;cursor:pointer;">Draft a text</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--pink-l);color:var(--pink);cursor:pointer;">Gift ideas</div>
+          <div style="font-size:11px;padding:7px 14px;border-radius:100px;background:var(--pink-l);color:var(--pink);cursor:pointer;">Add a note</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="demo-section" id="demo">
+  <div class="demo-label">interactive demo · real family · real data</div>
+  <div class="demo-intro">
+    <h2>this is what a year of spoonstack looks like.</h2>
+    <p>three kids. two working parents. summer is here. her brain outside her head, finally.</p>
+  </div>
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab(0)">🌅 Morning Stack</button>
+    <button class="tab-btn" onclick="switchTab(1)">🏠 Family Wiki</button>
+    <button class="tab-btn" onclick="switchTab(2)">🧠 The Brain</button>
+    <button class="tab-btn" onclick="switchTab(3)">📷 Scan to Brain</button>
+    <button class="tab-btn" onclick="switchTab(4)">✦ Try a Widget</button>
+  </div>
+
+  <!-- TAB 1: MORNING -->
+  <div class="tab-panel active">
+    <div class="demo-chrome">
+      <div class="chrome-bar">
+        <div class="chrome-dots"><div class="chrome-dot" style="background:#FF5F57"></div><div class="chrome-dot" style="background:#FFBD2E"></div><div class="chrome-dot" style="background:#28CA42"></div></div>
+        <div class="chrome-bar-title">Kitchen Display · Morning Stack</div>
+        <div class="chrome-badge">Carter Home</div>
+      </div>
+      <div class="stack-header">
+        <div>
+          <div class="stack-badge">01 — Morning Stack</div>
+          <div class="stack-title">Good morning, Alex.</div>
+          <div class="stack-meta">Thursday · summer is here. three kids. two working parents.</div>
+        </div>
+        <div><div class="stack-time">7:14</div><div class="stack-date-small">June 5 · 2026</div></div>
+      </div>
+      <div class="spoon-meter">
+        <div class="spoon-label">TODAY'S ENERGY</div>
+        <div class="spoon-pips"><div class="pip on"></div><div class="pip on"></div><div class="pip on"></div><div class="pip on"></div><div class="pip on"></div><div class="pip on"></div><div class="pip on"></div><div class="pip"></div><div class="pip"></div><div class="pip"></div></div>
+        <div class="spoon-note">good energy today · Thursdays tend to hold</div>
+      </div>
+      <div class="widget-grid">
+        <div class="widget-cell" onclick="openWidget('horizon')">
+          <div class="widget-name">🌤 Today's Stack</div>
+          <div class="widget-one">What's actually happening today</div>
+          <div class="wout"><div class="wout-lbl">Today</div>Twins need red shirts today. Iris's play is Thursday at 6pm. Book Father's Day dinner this week.<div class="tags"><span class="tag t-flag">Red shirts today</span><span class="tag t-do">Book dinner</span></div></div>
+        </div>
+        <div class="widget-cell" onclick="openWidget('safefoods')">
+          <div class="widget-name">🥣 What's For Dinner</div>
+          <div class="widget-one">What everyone can eat tonight</div>
+          <div class="wout"><div class="wout-lbl">Dinner options</div>Pasta with butter works for everyone. Iris needs plain with no sauce. Lily eats most things, toddler portions.<div class="tags"><span class="tag t-do">Pasta works</span></div></div>
+        </div>
+        <div class="widget-cell" onclick="openWidget('hardthing')">
+          <div class="widget-name">✦ One Hard Thing</div>
+          <div class="widget-one">Before 11am. That's the rule.</div>
+          <div class="wout"><div class="wout-lbl">Yours today</div>Book the couples therapy intake. You've moved this 4 times. Do it before 11 while your Vyvanse is working.<div class="tags"><span class="tag t-flag">Do this first</span></div></div>
+        </div>
+        <div class="widget-cell" onclick="openWidget('partner')">
+          <div class="widget-name">💌 Partner Update</div>
+          <div class="widget-one">What Damon needs to know</div>
+          <div class="wout"><div class="wout-lbl">Ready to send</div>Twins need red shirts Monday. Thursday: Iris play at 6pm, Lily needs you or a sitter. Book Father's Day dinner this week.<div class="tags"><span class="tag t-star">Send to Damon</span></div></div>
+        </div>
+        <div class="widget-cell" onclick="openWidget('braindump')">
+          <div class="widget-name">📋 Get It Out of Your Head</div>
+          <div class="widget-one">Get it out of your head</div>
+          <div class="wout"><div class="wout-lbl">This morning</div>Library book (Zoe), Vyvanse refill, summer camp deposit deadline.<div class="tags"><span class="tag t-muted">Sorted to Brain</span></div></div>
+        </div>
+        <div class="widget-cell" onclick="openWidget('transition')">
+          <div class="widget-name">🌀 What to Say</div>
+          <div class="widget-one">What to say when words don't come</div>
+          <div class="wout"><div class="wout-lbl">For Iris</div>"Hey Iris, today is Monday. Red shirts for you and Lily. We leave at 8. I'll tell you the rest in the car."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: WIKI -->
+  <div class="tab-panel">
+    <div class="demo-chrome">
+      <div class="chrome-bar">
+        <div class="chrome-dots"><div class="chrome-dot" style="background:#FF5F57"></div><div class="chrome-dot" style="background:#FFBD2E"></div><div class="chrome-dot" style="background:#28CA42"></div></div>
+        <div class="chrome-bar-title">Alex's Family Wiki</div>
+        <div class="chrome-badge">Updated today</div>
+      </div>
+      <div class="wiki-layout">
+        <div class="wiki-sidebar">
+          <div class="wiki-search-wrap"><input class="wiki-search" placeholder="Search the wiki…" type="text"></div>
+          <div class="wiki-section-label">Daily systems</div>
+          <div class="wiki-item active" onclick="showWiki('systems',this)"><div class="dot" style="background:var(--teal)"></div> House Systems</div>
+          <div class="wiki-item" onclick="showWiki('food',this)"><div class="dot" style="background:var(--vault)"></div> Safe Foods</div>
+          <div class="wiki-item" onclick="showWiki('school',this)"><div class="dot" style="background:var(--cyan)"></div> School + Contacts</div>
+          <div class="wiki-item" onclick="showWiki('meds',this)"><div class="dot" style="background:var(--coral)"></div> Meds + Routines</div>
+          <div class="wiki-section-label" style="margin-top:6px;">Family</div>
+          <div class="wiki-item" onclick="showWiki('marcus',this)"><div class="dot" style="background:var(--cyan)"></div> Iris, 9 (twin)</div>
+          <div class="wiki-item" onclick="showWiki('zoe',this)"><div class="dot" style="background:var(--purple)"></div> Zoe, 13</div>
+          <div class="wiki-item" onclick="showWiki('iris',this)"><div class="dot" style="background:var(--coral)"></div> Iris, 8</div>
+          <div class="wiki-item" onclick="showWiki('nia',this)"><div class="dot" style="background:var(--lime)"></div> Lily, 2 years old</div>
+          <div class="wiki-item" onclick="showWiki('david',this)"><div class="dot" style="background:var(--ink-3)"></div> Damon</div>
+          <div class="wiki-section-label" style="margin-top:6px;">Share</div>
+          <div class="wiki-item" onclick="showWiki('sitter',this)"><div class="dot" style="background:var(--hotpink)"></div> 📋 Babysitter view</div>
+        </div>
+        <div class="wiki-content">
+          <div class="wiki-page active" id="wp-systems">
+            <div class="wiki-page-title">House Systems</div>
+            <div class="wiki-page-meta">Carter Family · Atlanta, GA · updated today</div>
+            <div class="wh">Carpool</div>
+            <div class="wblock">
+              <div class="sys-row"><div class="sys-icon">🚗</div><div class="sys-label">Mon / Wed</div><div class="sys-val">Zoe rides with the Patels. Alex drives Fri. School pickup 3:15.</div></div>
+              <div class="sys-row"><div class="sys-icon">🚗</div><div class="sys-label">Marcus</div><div class="sys-val">Damon drops every morning. Alex picks up unless Damon texts by 2pm he's free.</div></div>
+              <div class="sys-row"><div class="sys-icon">🚗</div><div class="sys-label">Lily</div><div class="sys-val">Alex handles Lily dropoff. Home by 9am most days.</div></div>
+            </div>
+            <div class="wh">Dinner rule</div>
+            <div class="wblock">
+              <div class="sys-row"><div class="sys-icon">🍽️</div><div class="sys-label">The rule</div><div class="sys-val">One base dish + Marcus-safe protein + Eli always plated separately. No mixed textures on Eli's plate. Ever.</div></div>
+              <div class="sys-row"><div class="sys-icon">🗳️</div><div class="sys-label">Lily's say</div><div class="sys-val">Picks dinner 2x/week. Non-negotiable for her self-esteem.</div></div>
+              <div class="sys-row"><div class="sys-icon">📅</div><div class="sys-label">Sunday batch</div><div class="sys-val">Alex batch-cooks Sunday. Removes ~4 weeknight decisions. Non-negotiable infrastructure.</div></div>
+            </div>
+            <div class="wh">Morning flow</div>
+            <div class="wblock">
+              <div class="sys-row"><div class="sys-icon">⏰</div><div class="sys-label">7:00am</div><div class="sys-val">Morning Stack on kitchen display. Alex's anchor. Don't interrupt this window.</div></div>
+              <div class="sys-row"><div class="sys-icon">🎒</div><div class="sys-label">7:20am</div><div class="sys-val">Marcus gets the 3-step transition script: today's plan, departure time, bag check. Say it once. Don't negotiate.</div></div>
+              <div class="sys-row"><div class="sys-icon">🚪</div><div class="sys-label">8:00am</div><div class="sys-val">Everyone out. If Marcus is escalating at 7:50, Damon handles — Alex's bandwidth is gone by then.</div></div>
+            </div>
+            <div class="wh">Evening</div>
+            <div class="wblock">
+              <div class="sys-row"><div class="sys-icon">🔇</div><div class="sys-label">3–5pm</div><div class="sys-val">Alex's lowest point. No phone calls, no admin. Snack + decompress. Kids have independent time.</div></div>
+              <div class="sys-row"><div class="sys-icon">💊</div><div class="sys-label">Meds</div><div class="sys-val">Zoe: amoxicillin allergy — confirmed. Alex: Vyvanse before 8am. Lily: 9-month checkup pending.</div></div>
+            </div>
+          </div>
+          <div class="wiki-page" id="wp-food">
+            <div class="wiki-page-title">Safe Foods</div>
+            <div class="wiki-page-meta">Updated this week · Cross-referenced with pantry</div>
+            <div class="wh">Iris — safe / preferred</div>
+            <div class="wblock"><p>Pasta with butter (no sauce), plain rice, chicken nuggets (Perdue brand), apples, bananas, plain crackers, peanut butter smooth only, plain pancakes.</p><p><strong>Currently dairy-free trial</strong> — no butter, cheese, or milk for two weeks. Check in May 22.</p></div>
+            <div class="wh">Iris — avoid</div>
+            <div class="wblock"><p>Mixed textures, visible seasoning, unexpected sauces, strong smells at the table. strong-smelling foods near Iris anything near his plate.</p></div>
+            <div class="wh">Lily — safe (toddler)</div>
+            <div class="wblock"><p>Separate plate always. Plain pasta, plain bread, fruit pouches, scrambled eggs (no pepper), oatmeal. Food touching siblings' food is a hard stop.</p></div>
+            <div class="wh">Zoe + Lily</div>
+            <div class="wblock"><p>No restrictions. Zoe is vegetarian-curious — let her make that call.</p></div>
+          </div>
+          <div class="wiki-page" id="wp-school">
+            <div class="wiki-page-title">School + Contacts</div>
+            <div class="wiki-page-meta">2024–25 school year</div>
+            <div class="wh">Clearview Elementary</div>
+            <div class="wblock">
+              <div class="sys-row"><div class="sys-icon">📞</div><div class="sys-label">Marcus</div><div class="sys-val">Ms. Carter (homeroom) · Dr. Simms (resource). Call Dr. Simms for Iris's school support plan.</div></div>
+              <div class="sys-row"><div class="sys-icon">📞</div><div class="sys-label">Marcus</div><div class="sys-val">Ms. Rivera (homeroom). Responds to email within 24h.</div></div>
+              <div class="sys-row"><div class="sys-icon">📞</div><div class="sys-label">Eli</div><div class="sys-val">Ms. Thomas (Lily's teacher). Good relationship.</div></div>
+            </div>
+            <div class="wh">Hartwell High</div>
+            <div class="wblock">
+              <div class="sys-row"><div class="sys-icon">📞</div><div class="sys-label">Zoe</div><div class="sys-val">Ms. Okafor (resource room). Zoe trusts her. Loop in for anything academic.</div></div>
+            </div>
+          </div>
+          <div class="wiki-page" id="wp-meds">
+            <div class="wiki-page-title">Meds + Routines</div>
+            <div class="wiki-page-meta">Always verify before changing anything</div>
+            <div class="wh">Current medications</div>
+            <div class="wblock">
+              <div class="sys-row"><div class="sys-icon">💊</div><div class="sys-label">Alex</div><div class="sys-val">Vyvanse 40mg — before 8am always. After 8am and the day is compromised. Refill due ~May 28.</div></div>
+              <div class="sys-row"><div class="sys-icon">💊</div><div class="sys-label">Marcus</div><div class="sys-val">Lily: focus support at breakfast only. Takes 45min to kick in.</div></div>
+              <div class="sys-row"><div class="sys-icon">💊</div><div class="sys-label">Zoe</div><div class="sys-val">Sertraline 25mg — dinner. She manages her own. Remind gently on chaotic nights, don't make it a topic.</div></div>
+            </div>
+          </div>
+          <div class="wiki-page" id="wp-marcus">
+            <div class="wiki-page-title">Iris, 9 (twin)</div>
+            <div class="wiki-page-meta">7 years old · 2nd grade · She/her</div>
+            <div class="person-card">
+              <div class="person-av" style="background:var(--cyan-l)">🚂</div>
+              <div><div class="person-name">Marcus</div><div class="person-note">Current hyperfixation: weather radar + trains. Give him a weather check job and you've bought 10 minutes of calm. The shoes are never about the shoes.</div></div>
+            </div>
+            <div class="wh">What works</div>
+            <div class="wblock"><p>✓ 3-step transition script before any change. Say it once, don't negotiate.<br>✓ Weather anchor: "check the radar before we leave" — control + familiar thing.<br>✓ Give him a job at the destination: predictability + purpose.<br>✓ Minimum 20-minute window for anything unexpected.</p></div>
+            <div class="wh">Hard stops</div>
+            <div class="wblock"><p>⚡ Announcements under 10 minutes — meltdowns cluster here.<br>⚡ Mixed textures on his plate.<br>⚡ Loud TV during dinner.<br>⚡ Being asked to "just" do something.</p></div>
+          </div>
+          <div class="wiki-page" id="wp-zoe">
+            <div class="wiki-page-title">Zoe, 13</div>
+            <div class="wiki-page-meta">13 years old · 8th grade · She/her</div>
+            <div class="person-card">
+              <div class="person-av" style="background:var(--purple-l)">🎨</div>
+              <div><div class="person-name">Zoe</div><div class="person-note">Into: illustration, Studio Ghibli, fountain pens. Give her autonomy and she'll meet you halfway. Crowd it and she shuts down.</div></div>
+            </div>
+            <div class="wh">Right now</div>
+            <div class="wblock"><p>8th grade has been great. Ms. Okafor is the key relationship — Zoe trusts her. Resource room available daily. Sertraline going well — don't make it a topic.</p></div>
+          </div>
+          <div class="wiki-page" id="wp-iris">
+            <div class="wiki-page-title">Iris, 8</div>
+            <div class="wiki-page-meta">10 years old · 5th grade · She/her</div>
+            <div class="person-card">
+              <div class="person-av" style="background:var(--coral-l)">⚡</div>
+              <div><div class="person-name">Marcus</div><div class="person-note">High energy, big feelings, enormous heart. Focus support at breakfast — wait 45min before expecting regulation. She responds to fairness, not authority.</div></div>
+            </div>
+            <div class="wh">Right now</div>
+            <div class="wblock"><p>Mood elevated since Monday. Signs: door slamming, picking at siblings. Usually resolves by Thursday if you don't escalate. She gets dinner choice 2x/week — this matters enormously to her.</p></div>
+          </div>
+          <div class="wiki-page" id="wp-nia">
+            <div class="wiki-page-title">Lily, 2 years old</div>
+            <div class="wiki-page-meta">Speech delay · Possible autism in eval · Morningside pre-K</div>
+            <div class="person-card">
+              <div class="person-av" style="background:var(--lime-l)">🌿</div>
+              <div><div class="person-name">Lily</div><div class="person-note">Two years old. Full of opinions. Loves his yellow cup, pointing at everything, and snacks. Sleeps at 7:30 sharp — no exceptions.</div></div>
+            </div>
+            <div class="wh">Eval status</div>
+            <div class="wblock"><p>Lily is 2 years old. Pediatrician checkup at 9 months in July. Dr. Rivera at Emory Pediatrics.</p></div>
+          </div>
+          <div class="wiki-page" id="wp-david">
+            <div class="wiki-page-title">Damon</div>
+            <div class="wiki-page-meta">Partner · He/him</div>
+            <div class="wh">How to get what you need</div>
+            <div class="wblock"><p>✓ "I need X done by Y time" via text. Reads the brief every morning.<br>✓ Concrete, single-action asks. Not "handle it" — "call the school by 3pm about the pickup."<br>✓ Don't make requests after 8pm. Weekend morning is the best window.</p></div>
+          </div>
+          <div class="wiki-page" id="wp-sitter">
+            <div class="wiki-page-title">📋 Babysitter Guide</div>
+            <div class="wiki-page-meta">Share this view — nothing else needed</div>
+            <div class="wblock">
+              <p><strong>Emergency:</strong> Alex: 404-555-0182 · Damon: 404-555-0194</p>
+              <p><strong>Iris:</strong> Needs plain food, no mixed textures. Give him a specific job to do if he gets dysregulated. The complaint is rarely about the actual thing.</p>
+              <p><strong>Lily (2):</strong> Toddler. Snacks in the blue container in the fridge. Sleeps at 7:30pm, no exceptions.</p>
+              <p><strong>Lily:</strong> Pretty chill. Snacks, tablet time, and a 7:30 bedtime.</p>
+              <p><strong>Bedtime:</strong> 8:30 for Iris and Lily. Zoe manages herself.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: BRAIN — ZETTELKASTEN -->
+  <div class="tab-panel">
+    <div class="demo-chrome">
+      <div class="chrome-bar">
+        <div class="chrome-dots"><div class="chrome-dot" style="background:#FF5F57"></div><div class="chrome-dot" style="background:#FFBD2E"></div><div class="chrome-dot" style="background:#28CA42"></div></div>
+        <div class="chrome-bar-title">Alex's Brain · 127 notes</div>
+        <div class="chrome-badge">Your second brain</div>
+      </div>
+      <div class="brain-wrap">
+        <div class="brain-sidebar">
+          <input class="brain-search" placeholder="Search everything…" type="text">
+          <div class="brain-tag-cloud">
+            <div class="brain-tag-lbl">Tags</div>
+            <span class="brain-tag on" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--coral)"></span>#health</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--cyan)"></span>#school</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--teal)"></span>#home</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--yellow)"></span>#patterns</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--vault)"></span>#food</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--hotpink)"></span>#people</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--purple)"></span>#zoe</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--cyan)"></span>#marcus</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--coral)"></span>#priya</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--lime)"></span>#eli</span>
+            <span class="brain-tag" onclick="toggleTag(this)"><span class="brain-tag-dot" style="background:var(--ink-3)"></span>#david</span>
+            <span class="brain-tag" onclick="toggleTag(this)">#iep</span>
+            <span class="brain-tag" onclick="toggleTag(this)">#meds</span>
+            <span class="brain-tag" onclick="toggleTag(this)">#meltdown</span>
+            <span class="brain-tag" onclick="toggleTag(this)">#deadlines</span>
+          </div>
+          <div class="brain-domain-lbl">Recent sources</div>
+          <div class="brain-domain-item on" onclick="filterBrain(this)"><div class="brain-dot" style="background:rgba(255,255,255,.3)"></div><div class="brain-domain-name">All</div><div class="brain-domain-count">247</div></div>
+          <div class="brain-domain-item" onclick="filterBrain(this)"><div class="brain-dot" style="background:var(--coral)"></div><div class="brain-domain-name">📷 Camera scans</div><div class="brain-domain-count">44</div></div>
+          <div class="brain-domain-item" onclick="filterBrain(this)"><div class="brain-dot" style="background:var(--teal)"></div><div class="brain-domain-name">🎤 Voice</div><div class="brain-domain-count">31</div></div>
+          <div class="brain-domain-item" onclick="filterBrain(this)"><div class="brain-dot" style="background:var(--cyan)"></div><div class="brain-domain-name">✉ Email</div><div class="brain-domain-count">28</div></div>
+          <div class="brain-domain-item" onclick="filterBrain(this)"><div class="brain-dot" style="background:var(--yellow)"></div><div class="brain-domain-name">✦ AI-generated</div><div class="brain-domain-count">63</div></div>
+          <div class="brain-domain-item" onclick="filterBrain(this)"><div class="brain-dot" style="background:var(--ink-3)"></div><div class="brain-domain-name">⌨ Manual</div><div class="brain-domain-count">81</div></div>
+        </div>
+        <div class="brain-main">
+          <div class="brain-topbar">
+            <div class="brain-view-title">127 notes · sorted by recent</div>
+            <div class="brain-view-meta">tagged · linked · searchable</div>
+          </div>
+          <div class="brain-capture-bar">
+            <div class="bcb-btn"><span class="bcb-icon">📷</span> Scan</div>
+            <div class="bcb-btn"><span class="bcb-icon">🎤</span> Voice</div>
+            <div class="bcb-btn"><span class="bcb-icon">📁</span> Files</div>
+            <div class="bcb-btn"><span class="bcb-icon">🖼</span> Photos</div>
+            <div class="bcb-btn"><span class="bcb-icon">✉</span> Email</div>
+            <div class="bcb-btn"><span class="bcb-icon">⌨</span> Type</div>
+          </div>
+          <div class="brain-entries">
+
+            <div class="brain-entry featured" onclick="toggleEntry(this)">
+              <div class="be-top">
+                <div class="be-dp">
+                  <div class="be-dot" style="background:var(--cyan)"></div>
+                  <div class="be-domain-txt">#health #couples #deadlines</div>
+                </div>
+                <div class="be-date">Today</div>
+              </div>
+              <div class="be-title">Couples therapy intake — still not booked</div>
+              <div class="be-body">Intake form downloaded in April. Still not booked. Fourth time moving this. Do it before noon while your Vyvanse is working.</div>
+              <div class="be-tags">
+                <span class="be-tag">#eli</span>
+                <span class="be-tag">#iep</span>
+                <span class="be-tag">#school</span>
+                <span class="be-tag">#deadlines</span>
+              </div>
+              <div class="be-source">📷 Camera scan · doctor's note · May 2</div>
+              <div class="be-links"><div class="be-link">→ Eli's profile</div><div class="be-link">→ School contacts</div><div class="be-link">→ June calendar</div></div>
+            </div>
+
+            <div class="brain-entry" onclick="toggleEntry(this)">
+              <div class="be-top">
+                <div class="be-dp">
+                  <div class="be-dot" style="background:var(--yellow)"></div>
+                  <div class="be-domain-txt">#patterns #marcus #meltdown</div>
+                </div>
+                <div class="be-date">May 12</div>
+              </div>
+              <div class="be-title">Iris transition pattern — Marcus meltdown — transition window under 20 minlt;20 min announcements</div>
+              <div class="be-body">Shoes and clothes are sensory displacement, not the cause. Meltdowns cluster when announcement window &lt;20 min. Weather check = reliable interrupt. Give him a job at the destination.</div>
+              <div class="be-tags">
+                <span class="be-tag">#marcus</span>
+                <span class="be-tag">#patterns</span>
+                <span class="be-tag">#meltdown</span>
+                <span class="be-tag">#transitions</span>
+              </div>
+              <div class="be-source">✦ AI-generated from Evening Review · 14 observations</div>
+              <div class="be-links"><div class="be-link">→ Marcus's profile</div><div class="be-link">→ Transition script</div><div class="be-link">→ Sensory log</div></div>
+            </div>
+
+            <div class="brain-entry" onclick="toggleEntry(this)">
+              <div class="be-top">
+                <div class="be-dp">
+                  <div class="be-dot" style="background:var(--coral)"></div>
+                  <div class="be-domain-txt">#health #meds #deadlines</div>
+                </div>
+                <div class="be-date">May 10</div>
+              </div>
+              <div class="be-title">Family reunion rooms — St. Pete, July weekend TBD</div>
+              <div class="be-body">Need to find the reunion group text to confirm the weekend. Book hotel block before it fills. 4 rooms min.</div>
+              <div class="be-tags">
+                <span class="be-tag">#meds</span>
+                <span class="be-tag">#health</span>
+                <span class="be-tag">#deadlines</span>
+              </div>
+              <div class="be-source">📷 Camera scan · prescription label</div>
+              <div class="be-links"><div class="be-link">→ Alex's meds</div><div class="be-link">→ May calendar</div></div>
+            </div>
+
+            <div class="brain-entry" onclick="toggleEntry(this)">
+              <div class="be-top">
+                <div class="be-dp">
+                  <div class="be-dot" style="background:var(--vault)"></div>
+                  <div class="be-domain-txt">#food #marcus #health</div>
+                </div>
+                <div class="be-date">May 8</div>
+              </div>
+              <div class="be-title">Marcus dairy-free trial — Mon May 6 to May 22</div>
+              <div class="be-body">OT suggestion. Two weeks. He doesn't know it's a trial — don't make it a thing. Oat milk in fridge. Check in May 22.</div>
+              <div class="be-tags">
+                <span class="be-tag">#marcus</span>
+                <span class="be-tag">#food</span>
+                <span class="be-tag">#health</span>
+              </div>
+              <div class="be-source">🎤 Voice capture · kitchen</div>
+              <div class="be-links"><div class="be-link">→ Safe foods</div><div class="be-link">→ Marcus's profile</div></div>
+            </div>
+
+            <div class="brain-entry" onclick="toggleEntry(this)">
+              <div class="be-top">
+                <div class="be-dp">
+                  <div class="be-dot" style="background:var(--teal)"></div>
+                  <div class="be-domain-txt">#home #deadlines</div>
+                </div>
+                <div class="be-date">May 5</div>
+              </div>
+              <div class="be-title">Camp Ridgeline deposit — June 1 deadline</div>
+              <div class="be-body">$450 each for Zoe + Marcus. Damon said he'd handle it. Follow up May 20 if no confirmation email.</div>
+              <div class="be-tags">
+                <span class="be-tag">#deadlines</span>
+                <span class="be-tag">#zoe</span>
+                <span class="be-tag">#marcus</span>
+                <span class="be-tag">#home</span>
+              </div>
+              <div class="be-source">✉ Forwarded email · camp@ridgeline.org</div>
+              <div class="be-links"><div class="be-link">→ June deadlines</div><div class="be-link">→ Damon</div></div>
+            </div>
+
+            <div class="brain-entry" onclick="toggleEntry(this)">
+              <div class="be-top">
+                <div class="be-dp">
+                  <div class="be-dot" style="background:var(--yellow)"></div>
+                  <div class="be-domain-txt">#patterns #spoons</div>
+                </div>
+                <div class="be-date">May 4</div>
+              </div>
+              <div class="be-title">Monica low-spoon pattern — school breaks + Mondays</div>
+              <div class="be-body">Thursdays reliable. Mondays variable. School breaks deteriorate by day 3 without Morning Stack. 3–5pm is consistently the lowest window — no decisions here.</div>
+              <div class="be-tags">
+                <span class="be-tag">#patterns</span>
+                <span class="be-tag">#spoons</span>
+              </div>
+              <div class="be-source">✦ AI-generated from 63 spoon logs</div>
+              <div class="be-links"><div class="be-link">→ Spoon history</div><div class="be-link">→ Weekly Observations</div></div>
+            </div>
+
+            <div class="brain-entry" onclick="toggleEntry(this)">
+              <div class="be-top">
+                <div class="be-dp">
+                  <div class="be-dot" style="background:var(--cyan)"></div>
+                  <div class="be-domain-txt">#school #priya</div>
+                </div>
+                <div class="be-date">Apr 29</div>
+              </div>
+              <div class="be-title">Spring field trip permission slip — May 23</div>
+              <div class="be-body">Return signed with $12 cash by Friday May 16 to Ms. Park, room 14. Trip date May 23.</div>
+              <div class="be-tags">
+                <span class="be-tag">#school</span>
+                <span class="be-tag">#priya</span>
+                <span class="be-tag">#deadlines</span>
+              </div>
+              <div class="be-source">📷 Camera scan · permission slip</div>
+              <div class="be-links"><div class="be-link">→ May calendar</div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: SCAN TO BRAIN -->
+  <div class="tab-panel">
+    <div class="demo-chrome">
+      <div class="chrome-bar">
+        <div class="chrome-dots"><div class="chrome-dot" style="background:#FF5F57"></div><div class="chrome-dot" style="background:#FFBD2E"></div><div class="chrome-dot" style="background:#28CA42"></div></div>
+        <div class="chrome-bar-title">Brain Inbox · Scan anything</div>
+        <div class="chrome-badge">Goes straight to your Brain</div>
+      </div>
+      <div class="scan-wrap">
+        <div class="scan-left">
+          <div class="scan-lbl">Brain Inbox</div>
+          <div class="scan-title">Capture anything.<br>It files itself.</div>
+          <div class="scan-sub">spoonstack reads it, extracts what matters, suggests where it goes. it waits for you to confirm. Nothing saves without you.</div>
+          <div class="capture-grid">
+            <div class="capture-btn">
+              <div class="capture-btn-icon">📷</div>
+              <div class="capture-btn-label">Camera scan</div>
+              <div class="capture-btn-sub">Point at any document</div>
+            </div>
+            <div class="capture-btn">
+              <div class="capture-btn-icon">🖼</div>
+              <div class="capture-btn-label">Photo library</div>
+              <div class="capture-btn-sub">Choose from your camera roll</div>
+            </div>
+            <div class="capture-btn">
+              <div class="capture-btn-icon">📁</div>
+              <div class="capture-btn-label">Files</div>
+              <div class="capture-btn-sub">PDF, doc, or image</div>
+            </div>
+            <div class="capture-btn">
+              <div class="capture-btn-icon">🎤</div>
+              <div class="capture-btn-label">Voice</div>
+              <div class="capture-btn-sub">Tap and speak</div>
+            </div>
+          </div>
+          <div class="capture-email-row">
+            <div class="capture-email-icon">✉️</div>
+            <div class="capture-email-addr">you@in.spoonstack.app</div>
+            <button class="capture-copy-btn">Copy</button>
+          </div>
+          <div style="font-size:11px;color:var(--ink-3);line-height:1.6;">Forward any email here: school newsletters, doctor confirmations, appointment reminders. They land in your Brain Inbox automatically.</div>
+        </div>
+        <div class="scan-right">
+          <div class="scan-lbl">What it looks like</div>
+          <div class="scan-example-lbl" style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:8px;">You scanned this →</div>
+          <div class="scan-img">📄</div>
+          <div style="font-size:11px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;margin-bottom:12px;line-height:1.6;">Clearview Elementary: Spring Field Trip<br>May 23 · Return signed by May 16 · $12 cash · Ms. Park</div>
+          <div class="scan-loading"><div style="display:flex;gap:4px"><div class="sl-dot"></div><div class="sl-dot"></div><div class="sl-dot"></div></div> Reading your document…</div>
+          <div class="review-card">
+            <div class="rc-head"><div class="rc-lbl">📷 Camera scan · review before saving</div><div class="rc-domain">School</div></div>
+            <div class="rc-body">
+              <div class="rc-field"><div class="rc-field-lbl">Summary</div><div class="rc-field-val">Spring field trip permission slip — return signed with $12 cash by Friday May 16.</div></div>
+              <div class="rc-field"><div class="rc-field-lbl">Key details</div><ul class="rc-bullets"><li>Due: Friday May 16</li><li>Cost: $12 cash (not check)</li><li>Return to Ms. Park, room 14</li><li>Trip date: May 23</li></ul></div>
+              <div class="rc-field"><div class="rc-field-lbl">Tags</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:2px"><span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:100px;background:var(--cyan-l);color:var(--cyan);font-size:11px;font-weight:600;cursor:pointer">#school ✕</span><span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:100px;background:var(--coral-l);color:var(--coral);font-size:11px;font-weight:600;cursor:pointer">#priya ✕</span><span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:100px;background:var(--mono-bg);color:var(--ink-3);border:1px solid var(--border);font-size:11px;cursor:pointer">+ add tag</span></div></div>
+            </div>
+            <div class="rc-actions"><button class="rc-btn rc-btn-g">Edit fields</button><button class="rc-btn rc-btn-p">Save to Brain</button></div>
+            <span class="rc-dismiss">Dismiss (don't save)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5: TRY A WIDGET -->
+  <div class="tab-panel">
+    <div class="demo-chrome">
+      <div class="chrome-bar">
+        <div class="chrome-dots"><div class="chrome-dot" style="background:#FF5F57"></div><div class="chrome-dot" style="background:#FFBD2E"></div><div class="chrome-dot" style="background:#28CA42"></div></div>
+        <div class="chrome-bar-title">Kid Behavior Translator · Kid Stuff Stack</div>
+        <div class="chrome-badge">Live response</div>
+      </div>
+      <div class="widget-exp-wrap">
+        <div class="w-left">
+          <div class="w-section-lbl">Widget</div>
+          <div class="stack-chip"><div class="stack-chip-dot"></div> 07 — Kid Stuff Stack</div>
+          <div class="w-title">Kid Behavior Translator</div>
+          <div class="w-one">A Thing is happening. Figure out what it means before you react.</div>
+          <div class="prompt-box">
+            <div class="prompt-box-lbl">Monica typed</div>
+            <div class="prompt-text">"My 7yr old is having a meltdown because I told him we're leaving for Target in 10 minutes. He's on the floor saying his shoes hurt — but he wears these shoes every single day. I don't understand and I need to leave in 8 minutes."</div>
+          </div>
+          <button class="run-btn" id="runBtn" onclick="runWidget()"><span id="runIcon">▶</span> <span id="runText">Run widget</span></button>
+          <div class="w-context-box">
+            <div class="prompt-box-lbl">About this widget</div>
+            <p>Uses Alex's full Brain profile: family context, patterns, what works for each kid.</p>
+            <p>Responds for their family specifically, not generically.</p>
+          </div>
+        </div>
+        <div class="w-right">
+          <div class="resp-header"><div class="resp-widget-name" id="resp-widget-name">Morning Stack</div>
+            <div class="w-section-lbl" style="margin:0;">Response</div>
+            <div class="resp-badge" id="respBadge" style="display:none;">✓ Delivered in 1.2s</div>
+          </div>
+          <div id="respContent">
+            <div class="resp-empty">
+              <div class="resp-empty-icon">✦</div>
+              <div class="resp-empty-text">Run the widget to see Alex's response.</div>
+              <div class="resp-empty-sub">Responds with Marcus's full context built in.</div>
+            </div>
+          </div>
+          <div class="resp-footer" id="respFooter" style="display:none;"><span>Kid Stuff Stack</span><span>Saved → Brain: marcus-patterns</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+</section>
+
+<!-- PATTERN SUMMARY SECTION -->
+<section style="padding:40px 24px;max-width:1080px;margin:0 auto;">
+  <div class="section-eyebrow">Weekly and monthly observations</div>
+  <h2 class="section-title">it notices things you're too close to see.</h2>
+  <p class="section-sub">spoonstack watches quietly. then on sunday mornings it tells you what it found. gently, specifically, with one suggestion at a time.</p>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(44,40,32,.07);max-width:720px;margin:32px auto 0;">
+    <div style="background:var(--teal);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:4px;">Monthly Observations · May 2025</div>
+        <div style="font-size:18px;font-weight:800;color:#fff;">Here's what spoonstack noticed this month.</div>
+      </div>
+      <div style="font-size:32px;">📊</div>
+    </div>
+
+    <div style="padding:24px;">
+
+      <div style="margin-bottom:20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:10px;">Patterns</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="background:var(--teal-l);border-radius:10px;padding:12px 16px;font-size:13px;color:#0A4A35;line-height:1.65;">
+            Your lowest-spoon days clustered on Mondays and the day after school events. You logged CRISIS twice this month — both were the day after weekend activities.
+          </div>
+          <div style="background:var(--teal-l);border-radius:10px;padding:12px 16px;font-size:13px;color:#0A4A35;line-height:1.65;">
+            One Hard Thing completion: 18 out of 23 mornings. The 5 you skipped were all Mondays. The pattern is consistent enough to suggest Mondays might need a lighter stack.
+          </div>
+          <div style="background:var(--yellow-l);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--yellow-d);line-height:1.65;">
+            You made dinner decisions after 4pm seven times this month. Each time, it was a harder decision than it needed to be. You have a window between 7:30am and 9am that consistently goes unused.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:10px;">What changed this month</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:10px;font-size:13px;color:var(--ink-2);padding:8px 0;border-bottom:.5px solid var(--border);">
+            <span style="color:var(--teal);font-weight:700;">✓</span>
+            <span>Alex's Vyvanse refill was booked on time for the first time in 3 months. The 14-day reminder worked.</span>
+          </div>
+          <div style="display:flex;gap:10px;font-size:13px;color:var(--ink-2);padding:8px 0;border-bottom:.5px solid var(--border);">
+            <span style="color:var(--teal);font-weight:700;">✓</span>
+            <span>Partner Update sent 16 out of 23 days. Damon responded same-day 14 of those times.</span>
+          </div>
+          <div style="display:flex;gap:10px;font-size:13px;color:var(--ink-2);padding:8px 0;">
+            <span style="color:var(--coral);font-weight:700;">→</span>
+            <span>Robin hasn't been texted back in 3 weeks. Still in Brain. Still waiting.</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--mono-bg);border-radius:14px;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:8px;">One thing to try</div>
+        <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px;">Pre-decide dinner on Sunday mornings.</div>
+        <div style="font-size:13px;color:var(--ink-2);line-height:1.7;margin-bottom:14px;">You made 7 late-day dinner decisions this month. All of them were harder than they needed to be. A Sunday Dinners widget would remove those decisions entirely before the week starts.</div>
+        <div style="display:flex;gap:8px;">
+          <div style="font-size:12px;padding:8px 16px;border-radius:100px;background:var(--teal);color:#fff;font-weight:700;cursor:pointer;">Yes, add Sunday Dinners widget</div>
+          <div style="font-size:12px;padding:8px 16px;border-radius:100px;background:var(--card);border:1px solid var(--border);color:var(--ink-2);cursor:pointer;">Not right now</div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:8px;">spoonstack is curious about</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-2);padding:8px 12px;background:var(--card);border:.5px solid var(--border);border-radius:8px;">
+            <span style="color:var(--purple);flex-shrink:0;">?</span>
+            <span>Iris had 4 school mornings flagged as hard. Is there a pattern in which days those were?</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-2);padding:8px 12px;background:var(--card);border:.5px solid var(--border);border-radius:8px;">
+            <span style="color:var(--purple);flex-shrink:0;">?</span>
+            <span>You skipped your 11am snack reminder 9 times this month. Is that reminder helpful or just noise?</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-2);padding:8px 12px;background:var(--card);border:.5px solid var(--border);border-radius:8px;">
+            <span style="color:var(--purple);flex-shrink:0;">?</span>
+            <span>Couples therapy intake has been in One Hard Thing for 4 weeks. Want to move it somewhere different, or try a different approach?</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHONE / COMPUTER / SHORTCUT SECTION -->
+<section style="padding:48px 24px;background:var(--ink);">
+  <div style="max-width:1080px;margin:0 auto;">
+    <div class="section-eyebrow" style="color:rgba(255,255,255,.85);text-align:center;">Works where you are</div>
+    <h2 class="section-title" style="color:#FFFDF7;text-align:center;">On your phone. On your computer.<br>One tap away from any widget.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,.85);text-align:center;">spoonstack is a web app. Nothing to download. Open it in any browser on any device and it's already there.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:48px;" class="phone-grid">
+
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:26px;">
+        <div style="font-size:36px;margin-bottom:14px;">📱</div>
+        <div style="font-size:17px;font-weight:800;color:#FFFDF7;margin-bottom:8px;">iPhone and Android</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.75;">Open spoonstack in Safari or Chrome, tap Share, and add it to your Home Screen. It looks and feels like a native app. No App Store required.</div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:26px;">
+        <div style="font-size:36px;margin-bottom:14px;">💻</div>
+        <div style="font-size:17px;font-weight:800;color:#FFFDF7;margin-bottom:8px;">Mac, PC, or tablet</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.75;">Works in any browser. Pin the tab, bookmark it, or install it as a PWA. Your Morning Stack is one click away.</div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:26px;">
+        <div style="font-size:36px;margin-bottom:14px;">⚡</div>
+        <div style="font-size:17px;font-weight:800;color:#FFFDF7;margin-bottom:8px;">iPhone Shortcuts</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.75;">Create a Shortcut that opens directly to your One Hard Thing widget, What's For Dinner, or your whole Morning Stack. One tap on your lock screen. No navigation, no friction.</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:24px 28px;display:flex;align-items:center;gap:20px;">
+      <div style="font-size:32px;flex-shrink:0;">🏠</div>
+      <div>
+        <div style="font-size:16px;font-weight:700;color:#FFFDF7;margin-bottom:5px;">Put it on your kitchen display</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.7;">Old iPad on the counter? Spare Fire tablet? Open spoonstack in the browser, pin the Morning Stack, and your whole family can see what's happening today. No account needed for family members to view.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- WIDGET LIBRARY COMPACT -->
+<section style="padding:48px 24px;max-width:1080px;margin:0 auto;">
+  <div class="section-eyebrow" style="text-align:center;">the widget library</div>
+  <h2 class="section-title" style="text-align:center;">60 widgets. 12 stacks.<br>every one built for a specific moment.</h2>
+  <p class="section-sub" style="text-align:center;max-width:560px;margin:12px auto 32px;">every widget is built for a specific moment. here are 20 to start.</p>
+
+  <!-- Featured 20 -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;" class="widget-lib-grid">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#DAAF2E;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">📞</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">One Hard Thing</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">the task that's been sitting there for days. scripts the exact first move so you can finally start.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#7BC244;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🍳</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Dinner Decider</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">answers the 5pm question at 8am. knows what everyone will and won't eat. one answer, done.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#8B6FE8;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🪣</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Partner Briefing</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">writes what your partner needs to know today — or this week. one tap, message ready.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#DAAF2E;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🧠</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Brain Inbox</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">dump anything — text, voice, photo. it files automatically. nothing falls through.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#DAAF2E;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🗓</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Day Plan</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">dump your whole day. get it back sorted into what actually has to happen today.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#8B6FE8;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🌙</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Tomorrow Preview</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">clears tomorrow out of tonight's head so you can actually sleep.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#D85A30;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">📵</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Not Today Messages</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">drafts every cancellation message at once. warm, honest, not over-explained.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#C4427A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🧹</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">The Shame Eraser</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">takes the specific thing you're beating yourself up about and gives you the accurate read. not toxic positivity.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#0B8FA6;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">💭</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Kid Behavior Translator</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">describe what's happening. get a read on what's actually going on before you react.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#0B8FA6;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">✉️</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Teacher Email Draft</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">drafts the email to your kid's teacher. firm but warm. says what needs to be said.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#2A7A8C;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">👁</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">The Out-of-Sight Tracker</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">log where you put it when you put it down. find it when your brain has completely moved on.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#E8399A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🧠</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Remember Their Stuff</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">logs what matters to the people you care about so you never have to pretend you remembered.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#4A3560;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">👁</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Send It or Don't — Gut Check</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">paste the message before you send it. get an honest read on tone, timing, and whether it says what you mean.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#97C459;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🙈</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">The Post-Social Debrief</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">something felt off after the hang. get a calibrated read on what actually happened before the spiral wins.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#D85A30;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🌡</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">What Do I Say When I Call</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">should you call the doctor? and if yes — here's exactly what to say when they pick up.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#4A3560;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🤔</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Am I Reading This Right?</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">something feels off about a message or situation. actual evidence check vs. what your brain is telling you.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#2A7A8C;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🏥</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Medical Notes</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">every med, dosage, refill date, and doctor contact. queryable any time — including at urgent care.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#2A7A8C;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">💬</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Ask the Vault</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">ask anything about your family. it answers from what you've stored — not from the internet.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#8B6FE8;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🌑</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Shutdown Script</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">a closing sequence that signals your brain the day is over. force quit the day.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#8B6FE8;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🛁</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">What Do I Need Right Now</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">too tired to decide how to rest. picks a specific recovery activity based on your actual state.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- See all expand -->
+  <div id="wlib-more" style="display:none;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px;" class="widget-lib-grid">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#DAAF2E;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🚀</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">The Launching Pad</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">your morning check-in. context loaded, priorities clear, ready to move.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#C4427A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🔥</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Name What's Happening</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">you feel like garbage and don't know why. dump it all here first.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#C4427A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">💌</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">The Text You Won't Send</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">write the real one. get it out. then decide what to actually send.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#C4427A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">💚</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">3 Things That Are Actually True</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">your brain is telling you a story. here's the fact-check.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#C4427A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">⏸</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Before-You-Reply Pause</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">you're about to reply activated. 30 seconds first.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#C4427A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🧘</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Regulate First, Decide Later</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">you want to quit / move / send the email. you might be right. not right now.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#7BC244;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">📢</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Script the Opener</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">the first 10 seconds of the dreaded call or email. exact words.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#7BC244;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">❓</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Anticipate the Questions</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">what will they ask? have the answers ready before the meeting.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#7BC244;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">📝</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Brain Dump After</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">the call is done. dump everything before your memory drops it.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#7BC244;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">➡️</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">What Do I Do Next</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">you have four follow-ups and can't prioritize. one thing. that's it.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#7BC244;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🤝</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Delegate to Partner</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">writes the ask AND the script your partner needs to actually execute it.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#0B8FA6;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">📄</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Permission Slip Decoder</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">scan or paste the slip. get what it is, what you need to do, and when it's due.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#0B8FA6;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">💬</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Parent Group Chat Response</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">23 unread. find out what needs you without reading all 23.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#E8399A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">👥</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Who Haven't I Talked To</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">the guilt list. turned into an action list with a suggested message.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#E8399A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">💗</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Just Thinking of You Text</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">drafts a real message to the friend you've been meaning to text. short gap or long gap handled.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#E8399A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🎂</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Birthday / Milestone Tracker</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">surfaces upcoming birthdays with enough lead time to actually do something.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#E8399A;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">📅</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">We Should Hang — Actually Plan It</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">turns 'we should hang' from intention into a specific date, time, and message.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#4A3560;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🔍</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Sort This Text Thread</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">paste the thread. find out what they actually want and whether you need to reply.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#4A3560;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">✏️</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Draft the Reply — 3 Options</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">warm, neutral, or direct. pick the one that fits what you want to invest right now.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#4A3560;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">⏰</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Apology for Late Reply</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">it's been 11 days. drafts the reply without making the lateness the whole thing.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#4A3560;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">✋</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">I Can't Right Now Script</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">can't deal. can't disappear either. bridge message buys time without being vague.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#4A3560;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">😬</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">The Regretted Text</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">you already sent it. damage assessment and repair if needed.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#97C459;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">💌</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Thank You / Follow-Up Messages</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">someone made it nice. drafts the specific message before the window closes.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#97C459;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">✅</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Permission to Be Done for the Day</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">evidence-based reason to stop. not a pep talk.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#8B6FE8;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">💛</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">What Went Well Today</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">not journaling. three factual things that were true today. counters the negativity spiral.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#8B6FE8;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🔒</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Unsent Text Keeper</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">write it. feel it. don't send it. lives in the vault privately.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#8B6FE8;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🛑</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Stop the Spiral</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">interrupts the late-night research or thought spiral. logs the thread. gets you out.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#D85A30;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🌊</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Today's Triage</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">your day just collapsed. strips it to the bare minimum that actually has to happen.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#D85A30;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🍽</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Low-Effort Dinner</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">one option, minimum prep, everyone can eat it. for when dinner is too much.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#1D9E75;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">📅</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Week at a Glance</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">dump everything you know about this week. get a map back with conflicts flagged.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#1D9E75;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🛒</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Meal Plan + Grocery</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">five nights planned, one grocery list generated.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#1D9E75;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">👦</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Kid Schedule Sync</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">every kid, every activity, every pickup. sorted.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#1D9E75;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">✨</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Save This Week</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">one good thing before you reset. feeds the pattern data over time.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#2A7A8C;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🛠</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Things That Work</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">what has actually helped per person. shareable with caregivers.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#2A7A8C;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">👤</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Know Each Person</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">full profiles for everyone important. preferences, history, what to remember.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#2A7A8C;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🔄</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">What Was I Doing</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">you walked into a room and went blank. this remembers.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#2A7A8C;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🥗</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Safe Foods by Person</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">what each person will actually eat. including the hard nos.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#6B4FBF;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">🧠</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">For Your Kind of Brain</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">10 widgets built specifically for neurodivergent moms. regulation, RSD, executive function.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#1A1916;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">❓</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Question + Answer</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">ask spoonstack anything. it answers from your Brain and saves the answer automatically.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="height:3px;background:#1A1916;"></div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:flex-start;">
+        <span style="font-size:16px;flex-shrink:0;">📍</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;">Idea Capture</div>
+          <div style="font-size:11px;color:var(--ink-2);line-height:1.45;">any thought, any moment. lives in every stack. captures before it evaporates.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toggle button -->
+  <div style="text-align:center;margin-top:20px;">
+    <button onclick="toggleWidgetLib()" id="wlib-btn" style="padding:12px 28px;border-radius:100px;border:1.5px solid var(--border);background:var(--card);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ink-2);cursor:pointer;transition:all .2s;">See all 60 widgets ↓</button>
+  </div>
+</section>
+
+<!-- ALL STACKS SECTION -->
+<section style="padding:48px 24px;max-width:1080px;margin:0 auto;">
+  <div class="section-eyebrow" style="text-align:center;">built for where you actually are</div>
+  <h2 class="section-title" style="text-align:center;font-size:clamp(22px,3vw,32px);">there is a stack for whatever today looks like.</h2>
+
+  <div class="stacks-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px;">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">🌅</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Morning Energy</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">Set your spoons, get your day in order before it starts.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">🔭</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Today's Stack</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">What is coming in the next 7 days that needs attention now.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">🌙</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Evening Wind Down</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">Close the day, prep tomorrow, actually stop thinking about it.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">🌫</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Low Energy Day</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">your day just collapsed. here's the survival version — what can't move, what can wait, and what to cancel.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">🔥</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Emotional Dumpster Fire</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">When you are in it. Not toxic positivity. Just what helps right now.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">💪</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Hard Things</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">Scripts and support for the calls, emails, and appointments you keep avoiding.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">🧒</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Kid Stuff</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">Schedules, school comms, transition scripts. Everything kid-related.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">💌</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Friendship Maintenance</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">Stay connected without the guilt. Draft it, send it, done.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">📱</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Text Avoiding</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">The texts sitting there for days. Drafted and ready to send.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">🛋</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Post-Social Recovery</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">After people. Decompress, process, recharge.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">📦</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">Out of Sight Vault</div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.5;">Out of sight, out of mind. Log it here so it exists when you need it.</div>
+    </div>
+    <div style="background:#F0ECFD;border:1px solid rgba(107,79,191,.2);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">🧠</div>
+      <div style="font-size:13px;font-weight:700;color:#6B4FBF;margin-bottom:3px;">For Your Kind of Brain</div>
+      <div style="font-size:11px;color:#3D2A7A;line-height:1.5;">built specifically for neurodivergent moms. regulation, RSD, sensory, executive function.</div>
+    </div>
+    <div style="background:var(--teal-l);border:1px solid rgba(29,158,117,.2);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:18px;margin-bottom:6px;">✦</div>
+      <div style="font-size:13px;font-weight:700;color:var(--teal);margin-bottom:3px;">Always-on widgets</div>
+      <div style="font-size:11px;color:#0A4A35;line-height:1.5;">Idea Capture, The Out-of-Sight Tracker, What Was I Doing. Live in every stack.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MAILING LIST -->
+<section style="padding:40px 24px;max-width:640px;margin:0 auto;text-align:center;">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px 40px;">
+    <div style="font-size:28px;margin-bottom:12px;">📬</div>
+    <div style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:8px;">stay in the loop.</div>
+    <div style="font-size:14px;color:var(--ink-2);line-height:1.7;margin-bottom:24px;">new widgets, launch updates, and the occasional thing i learned building this. no spam. unsubscribe anytime.</div>
+    <form action="https://agency.us10.list-manage.com/subscribe/post?u=992689a32348beeb8e6220c3f&amp;id=1fa7fbff08&amp;f_id=00576ee2f0" method="post" target="_blank" style="display:flex;gap:8px;max-width:420px;margin:0 auto;">
+      <input type="email" name="EMAIL" placeholder="your@email.com" required style="flex:1;padding:13px 16px;border:1.5px solid var(--border);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;background:var(--cream);" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
+      <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_992689a32348beeb8e6220c3f_1fa7fbff08" tabindex="-1" value=""></div>
+      <button type="submit" style="padding:13px 22px;border-radius:100px;background:var(--teal);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;border:none;cursor:pointer;white-space:nowrap;">Join</button>
+    </form>
+    <div style="margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-3);letter-spacing:.04em;">No spam. Unsubscribe anytime.</div>
+  </div>
+</section>
+
+<section id="waitlist" class="waitlist-section">
+  <div class="waitlist-inner">
+    <div class="waitlist-eyebrow">Early access · First 500 spots · $79/year locked forever</div>
+    <h2 class="waitlist-title">ready for an AI that actually gets you?</h2>
+    <p class="waitlist-sub">spoonstack is in early access. get in at $79/year and lock that price forever. when it goes to $99, you keep $79. no spam. no pressure. we know you're busy.</p>
+    <div style="margin-top:28px;text-align:center;">
+      <a href="https://buy.stripe.com/cNicN54Vo8hSbox2Ok3ZK00" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:#1A1200;font-family:'DM Sans',sans-serif;font-size:18px;font-weight:800;padding:20px 44px;border-radius:100px;text-decoration:none;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 20px rgba(218,175,46,.4);letter-spacing:-.01em;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.25)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">Get early access for $79/year →</a>
+      <div style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.88);letter-spacing:.04em;">500 spots · $79/year locked forever · cancel anytime</div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CONTACT SECTION -->
+<section style="padding:40px 24px;max-width:780px;margin:0 auto;text-align:center;">
+  <div style="background:var(--teal-l);border:1px solid rgba(29,158,117,.15);border-radius:20px;padding:36px 40px;">
+    <div style="font-size:28px;margin-bottom:12px;">💬</div>
+    <div style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:8px;">have a question or just want to say hi?</div>
+    <div style="font-size:14px;color:var(--ink-2);line-height:1.7;margin-bottom:24px;max-width:460px;margin-left:auto;margin-right:auto;">i built this myself and i read every message. questions, feedback, ideas, or just wanting to know if spoonstack is right for you. reach out.</div>
+    <a href="mailto:brittany@alittle.agency?subject=spoonstack question" style="display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;padding:14px 28px;border-radius:100px;text-decoration:none;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 16px rgba(29,158,117,.3);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(29,158,117,.4)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 16px rgba(29,158,117,.3)'">✉️ Send me a message</a>
+    <div style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-3);letter-spacing:.04em;">brittany@alittle.agency · I usually respond within 24 hours</div>
+  </div>
+</section>
+
+<!-- AI TRUST SECTION -->
+<section style="padding:48px 24px;background:var(--ink);">
+  <div style="max-width:780px;margin:0 auto;text-align:center;">
+    <div class="section-eyebrow" style="color:rgba(255,255,255,.5);">about the AI</div>
+    <h2 style="font-size:clamp(26px,4vw,38px);font-weight:800;color:#FFFDF7;letter-spacing:-.025em;margin-bottom:14px;line-height:1.1;">your data is yours.<br>it stays inside spoonstack.</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.75);line-height:1.8;max-width:600px;margin:0 auto 40px;">we know that putting your family's information into an AI app takes trust. here's exactly what happens, in plain english.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left;">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;">
+        <div style="font-size:26px;margin-bottom:12px;">🔒</div>
+        <div style="font-size:14px;font-weight:700;color:#FFFDF7;margin-bottom:8px;">it only works for you</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;">everything you put into spoonstack lives in your private account. no one else can see it. not even us. it's like a locked journal that also happens to be brilliant.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;">
+        <div style="font-size:26px;margin-bottom:12px;">🚫</div>
+        <div style="font-size:14px;font-weight:700;color:#FFFDF7;margin-bottom:8px;">we don't sell it or share it</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;">your family's information is not a product. we don't sell your data, share it with advertisers, or use it for anything except running the app for you. that's it.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;">
+        <div style="font-size:26px;margin-bottom:12px;">🤖</div>
+        <div style="font-size:14px;font-weight:700;color:#FFFDF7;margin-bottom:8px;">it doesn't train AI on your life</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;">spoonstack uses claude by anthropic to power the AI. per anthropic's policy, your conversations are not used to train any AI models. what you share stays between you and your account.</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:18px 24px;display:flex;align-items:center;gap:16px;text-align:left;">
+      <div style="font-size:24px;flex-shrink:0;">🗑</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;"><strong style="color:#FFFDF7;">want to leave?</strong> one button in settings deletes your account and every piece of data permanently. no waiting period, no retention. completely gone.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY SECTION -->
+<section style="padding:48px 24px;background:var(--mono-bg);">
+  <div style="max-width:1080px;margin:0 auto;">
+    <div class="section-eyebrow" style="text-align:center;">the details, if you want them</div>
+    <h2 class="section-title" style="text-align:center;">this file is yours.<br>not ours.</h2>
+    <p class="section-sub" style="text-align:center;">you're putting your family's schedules, routines, and notes into this app. here's exactly how we handle that.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:48px;">
+      <div style="background:var(--card);border:.5px solid var(--border);border-radius:16px;padding:24px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:12px;">🔐</div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px;">Your data lives in your account</div>
+        <div style="font-size:13px;color:var(--ink-2);line-height:1.7;">Stored in your own secure database. Encrypted at rest and in transit. We cannot read your family's information.</div>
+        <div style="margin-top:10px;display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:3px 10px;border-radius:100px;background:var(--teal-l);color:var(--teal);">Confirmed</div>
+      </div>
+      <div style="background:var(--card);border:.5px solid var(--border);border-radius:16px;padding:24px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:12px;">🚫</div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px;">We don't sell it</div>
+        <div style="font-size:13px;color:var(--ink-2);line-height:1.7;">Your family's medical notes are not a product. We don't sell data, share it with advertisers, or use it for anything except running the app for you.</div>
+        <div style="margin-top:10px;display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:3px 10px;border-radius:100px;background:var(--teal-l);color:var(--teal);">Never</div>
+      </div>
+      <div style="background:var(--card);border:.5px solid var(--border);border-radius:16px;padding:24px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:12px;">🤖</div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px;">We don't train AI on it</div>
+        <div style="font-size:13px;color:var(--ink-2);line-height:1.7;">Claude by Anthropic processes your requests and doesn't retain them. Your family's data is never used to train AI models.</div>
+        <div style="margin-top:10px;display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:3px 10px;border-radius:100px;background:var(--teal-l);color:var(--teal);">Anthropic's policy</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;background:var(--card);border:.5px solid var(--border);border-radius:16px;padding:22px 28px;display:flex;align-items:center;gap:20px;">
+      <div style="font-size:28px;flex-shrink:0;">🗑</div>
+      <div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;">Delete everything, anytime</div>
+        <div style="font-size:13px;color:var(--ink-2);line-height:1.7;">One button in settings removes your account and all associated data permanently. No 30-day grace period. No retention. Gone.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;background:var(--card);border:.5px solid var(--border);border-radius:16px;padding:22px 28px;display:flex;align-items:center;gap:20px;">
+      <div style="font-size:28px;flex-shrink:0;">📊</div>
+      <div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;">The only thing we collect is anonymous usage patterns</div>
+        <div style="font-size:13px;color:var(--ink-2);line-height:1.7;">Which widget layouts most people prefer. Which input styles work best for different users. This helps spoonstack get smarter for everyone over time. It is never linked to your identity or your family's information.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section style="padding:40px 24px;max-width:780px;margin:0 auto;">
+  <div class="section-eyebrow" style="text-align:center;">Questions</div>
+  <h2 class="section-title" style="text-align:center;">questions you're probably already asking.</h2>
+
+  <div style="display:flex;flex-direction:column;gap:0;margin-top:40px;border:.5px solid var(--border);border-radius:18px;overflow:hidden;">
+
+    <div class="faq-item" style="padding:22px 26px;border-bottom:.5px solid var(--border);cursor:pointer;" onclick="this.querySelector('.faq-ans').style.display=this.querySelector('.faq-ans').style.display==='none'?'block':'none';this.querySelector('.faq-arrow').textContent=this.querySelector('.faq-ans').style.display==='none'?'↓':'↑'">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--ink);">Is my family's information private?</div>
+        <span class="faq-arrow" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-3);">↓</span>
+      </div>
+      <div class="faq-ans" style="display:none;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.75;">Yes. Your data lives in your account, encrypted at rest and in transit. We don't sell it, share it, or train AI on it. The AI that powers spoonstack (Claude by Anthropic) processes your requests and doesn't retain them. You can delete everything permanently from settings at any time.</div>
+    </div>
+
+    <div class="faq-item" style="padding:22px 26px;border-bottom:.5px solid var(--border);cursor:pointer;" onclick="this.querySelector('.faq-ans').style.display=this.querySelector('.faq-ans').style.display==='none'?'block':'none';this.querySelector('.faq-arrow').textContent=this.querySelector('.faq-ans').style.display==='none'?'↓':'↑'">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--ink);">Do I need to download an app?</div>
+        <span class="faq-arrow" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-3);">↓</span>
+      </div>
+      <div class="faq-ans" style="display:none;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.75;">No. spoonstack is a web app. Open it in any browser on your phone, computer, or tablet and it works instantly. On iPhone or Android, you can add it to your home screen and it looks and feels like a native app. No App Store required.</div>
+    </div>
+
+    <div class="faq-item" style="padding:22px 26px;border-bottom:.5px solid var(--border);cursor:pointer;" onclick="this.querySelector('.faq-ans').style.display=this.querySelector('.faq-ans').style.display==='none'?'block':'none';this.querySelector('.faq-arrow').textContent=this.querySelector('.faq-ans').style.display==='none'?'↓':'↑'">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--ink);">i'm not sure if this is for me. how do i know?</div>
+        <span class="faq-arrow" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-3);">↓</span>
+      </div>
+      <div class="faq-ans" style="display:none;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.75;">if you're the one who remembers everything: the schedules, the appointments, the invisible list that lives in your head. spoonstack was built for you. decision fatigue, the mental load, the constant overhead of running a family. these aren't diagnoses, they're experiences. if your brain is running on fumes by 3pm, you're exactly who this is for.</div>
+    </div>
+
+    <div class="faq-item" style="padding:22px 26px;border-bottom:.5px solid var(--border);cursor:pointer;" onclick="this.querySelector('.faq-ans').style.display=this.querySelector('.faq-ans').style.display==='none'?'block':'none';this.querySelector('.faq-arrow').textContent=this.querySelector('.faq-ans').style.display==='none'?'↓':'↑'">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--ink);">What happens after the 500 early access spots?</div>
+        <span class="faq-arrow" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-3);">↓</span>
+      </div>
+      <div class="faq-ans" style="display:none;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.75;">The price goes up. We don't know exactly where it lands yet. that depends on how spoonstack grows. What we do know: your $79 is locked in forever. However high the price goes, you keep $79. That's the deal.</div>
+    </div>
+
+    <div class="faq-item" style="padding:22px 26px;border-bottom:.5px solid var(--border);cursor:pointer;" onclick="this.querySelector('.faq-ans').style.display=this.querySelector('.faq-ans').style.display==='none'?'block':'none';this.querySelector('.faq-arrow').textContent=this.querySelector('.faq-ans').style.display==='none'?'↓':'↑'">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--ink);">Can my partner use it too?</div>
+        <span class="faq-arrow" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-3);">↓</span>
+      </div>
+      <div class="faq-ans" style="display:none;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.75;">Yes. Share the link and they can access the app. One account covers your whole family's data. Partner Update is designed specifically so the person running the household can brief their partner in one tap. no login required on their end to receive it.</div>
+    </div>
+
+    <div class="faq-item" style="padding:22px 26px;border-bottom:.5px solid var(--border);cursor:pointer;" onclick="this.querySelector('.faq-ans').style.display=this.querySelector('.faq-ans').style.display==='none'?'block':'none';this.querySelector('.faq-arrow').textContent=this.querySelector('.faq-ans').style.display==='none'?'↓':'↑'">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--ink);">Is there a free trial?</div>
+        <span class="faq-arrow" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-3);">↓</span>
+      </div>
+      <div class="faq-ans" style="display:none;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.75;">The interactive demo on this page shows you exactly what spoonstack does — real widgets, real outputs, real family context. No trial right now. If it's not right for you after joining, reach out and we'll make it right.</div>
+    </div>
+
+    <div class="faq-item" style="padding:22px 26px;border-bottom:.5px solid var(--border);cursor:pointer;" onclick="this.querySelector('.faq-ans').style.display=this.querySelector('.faq-ans').style.display==='none'?'block':'none';this.querySelector('.faq-arrow').textContent=this.querySelector('.faq-ans').style.display==='none'?'↓':'↑'">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--ink);">What AI does spoonstack use?</div>
+        <span class="faq-arrow" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-3);">↓</span>
+      </div>
+      <div class="faq-ans" style="display:none;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.75;">Claude by Anthropic. The same AI used by major companies and research institutions. We chose Claude because Anthropic's approach to AI safety and privacy aligns with what we're building. Your conversations with the AI are processed and not stored by Anthropic.</div>
+    </div>
+
+    <div class="faq-item" style="padding:22px 26px;border-bottom:.5px solid var(--border);cursor:pointer;" onclick="this.querySelector('.faq-ans').style.display=this.querySelector('.faq-ans').style.display==='none'?'block':'none';this.querySelector('.faq-arrow').textContent=this.querySelector('.faq-ans').style.display==='none'?'↓':'↑'">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--ink);">Can this be built for my company or organization?</div>
+        <span class="faq-arrow" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-3);">↓</span>
+      </div>
+      <div class="faq-ans" style="display:none;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.75;">Yes. The same system that powers spoonstack can be adapted for teams, schools, clinics, HR departments, or any organization that wants an AI tool built around their specific context and workflows. Custom stacks, custom widgets, custom family or team data structures. If you have something in mind, send a message through the app and we can talk through what that looks like.</div>
+    </div>
+
+    <div class="faq-item" style="padding:22px 26px;cursor:pointer;" onclick="this.querySelector('.faq-ans').style.display=this.querySelector('.faq-ans').style.display==='none'?'block':'none';this.querySelector('.faq-arrow').textContent=this.querySelector('.faq-ans').style.display==='none'?'↓':'↑'">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--ink);">Can I cancel?</div>
+        <span class="faq-arrow" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-3);">↓</span>
+      </div>
+      <div class="faq-ans" style="display:none;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.75;">Yes. Cancel anytime from within your account settings. Questions? Message us through the app.</div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">spoonstack</div>
+  for brains that work differently.<br>
+  <a href="https://spoonstack.app">spoonstack.app</a> &nbsp;·&nbsp; <a href="mailto:hello@alittleagency.com">hello@alittleagency.com</a> &nbsp;·&nbsp; <a href="/sign-in">sign in</a>
+</footer>
+
+<!-- WIDGET MODALS -->
+<div class="wmodal-overlay" id="wmodal-overlay" onclick="closeModal(event)">
+  <div class="wmodal" id="wmodal-content">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<script>
+function submitWaitlist(){
+  const email = document.getElementById('wl-email').value.trim();
+  if(!email || !email.includes('@')){
+    document.getElementById('wl-email').style.borderColor='rgba(216,90,48,.8)';
+    document.getElementById('wl-email').focus();
+    return;
+  }
+  window.location.href = 'mailto:hello@alittleagency.com?subject=spoonstack early access&body=Email: ' + encodeURIComponent(email);
+  document.getElementById('wl-form').style.display='none';
+  document.getElementById('wl-success').style.display='block';
+}
+function switchTab(idx){
+  document.querySelectorAll('.tab-panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===idx));
+}
+function showWiki(id,el){
+  document.querySelectorAll('.wiki-page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.wiki-item').forEach(i=>i.classList.remove('active'));
+  const page=document.getElementById('wp-'+id);
+  if(page)page.classList.add('active');
+  if(el)el.classList.add('active');
+}
+function toggleEntry(el){
+  const wasOpen=el.classList.contains('open');
+  document.querySelectorAll('.brain-entry').forEach(e=>e.classList.remove('open'));
+  if(!wasOpen)el.classList.add('open');
+}
+function filterBrain(el){
+  document.querySelectorAll('.brain-domain-item').forEach(i=>i.classList.remove('on'));
+  if(el)el.classList.add('on');
+}
+function toggleTag(el){
+  el.classList.toggle('on');
+}
+function closeModal(e){
+  if(e.target===document.getElementById('wmodal-overlay')||e.currentTarget===document.getElementById('wmodal-overlay')&&e.target.classList.contains('wmodal-close')){
+    document.getElementById('wmodal-overlay').classList.remove('open');
+  }
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('wmodal-overlay').classList.remove('open');});
+
+const WIDGETS = {
+  horizon:{
+    icon:'🌤',
+    name:"Today's Stack",
+    stack:'01 — Morning Stack',
+    tagline:'Cuts through the noise. Tells you what\'s actually happening today — not the calendar version, the real version.',
+    sections:[
+      {lbl:'Today — what actually matters',content:`<div class="wmodal-row"><div class="wmodal-row-icon">👕</div><div class="wmodal-row-label">Twins</div><div class="wmodal-row-val">Red shirts today. Lily and Iris both need them. Check the clean laundry bin.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">🎭</div><div class="wmodal-row-label">Thursday</div><div class="wmodal-row-val">Iris has the play at 6pm. Lily needs a sitter or Damon. Confirm today.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">💊</div><div class="wmodal-row-label">Meds</div><div class="wmodal-row-val">All done — Lily had focus support at breakfast. Your Vyvanse was before 8am.</div></div>`,tags:['t-flag:Red shirts today','t-do:Book dinner','t-do:Confirm sitter']},
+      {lbl:'This week — things that don\'t expire today',content:`<div class="wmodal-row"><div class="wmodal-row-icon">📅</div><div class="wmodal-row-label">Friday</div><div class="wmodal-row-val">Eli milestone appointment — Dr. Sullivan 9am. Confirm tomorrow.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">💊</div><div class="wmodal-row-label">May 28</div><div class="wmodal-row-val">Vyvanse refill due. Call Dr. Patel by May 25 — controlled substance, no auto-refill.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">🏕</div><div class="wmodal-row-label">June 1</div><div class="wmodal-row-val">Camp Ridgeline deposit deadline. Damon said he'd handle it — not confirmed yet.</div></div>`,tags:['t-flag:Friday appt','t-flag:May 28 refill']},
+    ],
+    spoon:{low:'Collapses to 3 items max — only the things with a hard deadline today. Everything else disappears.',crisis:'Shows only 1 item: the single most time-sensitive thing. One sentence. No context.'}
+  },
+  safefoods:{
+    icon:'🥣',
+    name:"What's For Dinner",
+    stack:'01 — Morning Stack',
+    tagline:'Knows every restriction, preference, and current avoidance. Cross-references your pantry and gives you real answers, not a list of safe foods.',
+    sections:[
+      {lbl:'Tonight — what everyone can eat',content:`<div class="wmodal-row"><div class="wmodal-row-icon">✓</div><div class="wmodal-row-label">Everyone</div><div class="wmodal-row-val">Pasta with oat-milk butter. Marcus is dairy-free trial week 2 — regular butter is out. Oat milk in the fridge.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">⚠</div><div class="wmodal-row-label">Marcus + you</div><div class="wmodal-row-val">Eggs + toast works. Not for Eli — separate plate required, and Eli currently avoiding eggs.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">✗</div><div class="wmodal-row-label">Grilled cheese</div><div class="wmodal-row-val">Marcus is dairy-free this week. Eli has texture aversion to melted cheese. Skip.</div></div>`,tags:['t-do:Pasta ✓ everyone','t-flag:Dairy-free this week']},
+      {lbl:'Current restrictions + notes',content:`<div class="wmodal-row"><div class="wmodal-row-icon">🥛</div><div class="wmodal-row-label">Marcus</div><div class="wmodal-row-val">Dairy-free trial through May 22. Separate plate always. No mixed textures. No visible seasoning.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">🍽</div><div class="wmodal-row-label">Eli</div><div class="wmodal-row-val">Always plated separately from siblings. Food touching is a hard stop. Currently: no eggs.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">🗳</div><div class="wmodal-row-label">Marcus</div><div class="wmodal-row-val">No restrictions. Gets dinner choice 2x/week — this is Tuesday, so yes tonight. Lily picks tonight.</div></div>`,tags:['t-muted:No restrictions Zoe','t-muted:No restrictions you']},
+    ],
+    spoon:{low:'Just shows one option that works for everyone. No reasoning, no breakdown. "Pasta tonight. Works for all four."',crisis:'One sentence. "Pasta. Everyone can eat it."'}
+  },
+  hardthing:{
+    icon:'✦',
+    name:'One Hard Thing',
+    stack:'01 — Morning Stack',
+    tagline:"Picks the one thing you\'ve been avoiding and puts it in front of you before 11am. Before the day consumes you.",
+    sections:[
+      {lbl:'Today\'s hard thing',content:`<div class="wmodal-output" style="font-size:15px;line-height:1.8"><strong>Book the couples therapy intake session.</strong><br><br>You've moved this 4 times. You and Damon have talked about this for two months. The number is saved in your phone. The call takes 4 minutes.<br><br>The call takes 4 minutes. Do it before you open anything else.</div>`,tags:['t-flag:Do this first','t-flag:Window closing']},
+      {lbl:'Why this one',content:`<div class="wmodal-row"><div class="wmodal-row-icon">📊</div><div class="wmodal-row-label">Moved</div><div class="wmodal-row-val">4 times in the last 3 weeks. Pattern: you move it when the morning gets heavy.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">⏰</div><div class="wmodal-row-label">Deadline</div><div class="wmodal-row-val">You both agreed June was the goal. That window is closing.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">📞</div><div class="wmodal-row-label">The ask</div><div class="wmodal-row-val">Search 'therapists near me couples' in your Brain. Ask Damon tonight which days work for him.</div></div>`,tags:['t-star:4-min call']},
+    ],
+    spoon:{low:'Drops context. Just: "Call Dr. Park — 404-555-0180. 4 minutes." Nothing else.',crisis:'Hidden entirely. You don\'t have a hard thing on a crisis day. The widget disappears.'}
+  },
+  partner:{
+    icon:'💌',
+    name:'Partner Update',
+    stack:'01 — Morning Stack',
+    tagline:'Writes Damon\'s morning briefing so you don\'t have to. He reads it, he knows what\'s happening, you don\'t have to repeat yourself.',
+    sections:[
+      {lbl:'Today\'s brief — ready to send',content:`<div class="wmodal-output" style="font-size:13.5px;line-height:1.9">Hey — a few things for today:<br><br>📌 <strong>Zoe has cheer pickup at 3:30.</strong> If Alex is running late, she needs you to cover the pickup. Text her by noon to confirm.<br><br>📌 <strong>Zoe has been off this week</strong> — worth a check-in tonight more than usual. Not a crisis, just FYI. Don't escalate if she's difficult tonight.<br><br>📌 <strong>Lily's 2-year checkup is Friday</strong> at 9am with Dr. Rivera. Alex has it.<br><br>No asks tonight — just good to know before you walk in.</div>`,tags:['t-star:Ready to send']},
+      {lbl:'What Damon sees vs. what he doesn\'t',content:`<div class="wmodal-row"><div class="wmodal-row-icon">✓</div><div class="wmodal-row-label">Included</div><div class="wmodal-row-val">Action items with clear asks. Time-sensitive FYIs. One thing per kid max.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">✗</div><div class="wmodal-row-label">Filtered out</div><div class="wmodal-row-val">Alex's medical notes, her spoon level, things Damon doesn't need to act on. Keeps the brief clean and readable.</div></div>`,tags:['t-muted:Filtered for Damon']},
+    ],
+    spoon:{low:'Shorter brief, fewer items. Flags only things Damon needs to physically do.',crisis:'Brief paused. Sends a single line: "Rough day — just handle the basics tonight."'}
+  },
+  braindump:{
+    icon:'📋',
+    name:'Get It Out of Your Head',
+    stack:'01 — Morning Stack',
+    tagline:"Get everything out of your head. spoonstack reads what you typed and figures out where it goes — so it doesn\'t evaporate.",
+    sections:[
+      {lbl:'This morning\'s dump',content:`<div class="wmodal-output" style="font-size:13px;line-height:1.9;font-family:'IBM Plex Mono',monospace;color:var(--ink-2)">"library book Zoe probably overdue, Vyvanse refill need to call, summer camp deposit Damon said he'd do it but did he, need to text Robin back it's been 3 days, iris dentist when was the last time"</div>`,tags:['t-muted:Raw dump']},
+      {lbl:'Sorted — where it went',content:`<div class="wmodal-row"><div class="wmodal-row-icon">📚</div><div class="wmodal-row-label">Zoe library book</div><div class="wmodal-row-val">→ Brain: School #zoe · Flagged as overdue-check</div></div><div class="wmodal-row"><div class="wmodal-row-icon">💊</div><div class="wmodal-row-label">Vyvanse refill</div><div class="wmodal-row-val">→ Brain: Health #meds · Added to One Hard Thing queue for tomorrow if not done today</div></div><div class="wmodal-row"><div class="wmodal-row-icon">🏕</div><div class="wmodal-row-label">Camp deposit</div><div class="wmodal-row-val">→ Brain: Home #deadlines · Linked to existing June 1 note · Flagged: Damon follow-up May 20</div></div><div class="wmodal-row"><div class="wmodal-row-icon">💌</div><div class="wmodal-row-label">Text Robin</div><div class="wmodal-row-val">→ Brain: People #people · Added to Friendship Maintenance stack</div></div><div class="wmodal-row"><div class="wmodal-row-icon">🦷</div><div class="wmodal-row-label">Marcus dentist</div><div class="wmodal-row-val">→ Brain: Health #marcus · Last visit: Nov 2024. Flagged as overdue.</div></div>`,tags:['t-do:5 items sorted','t-star:All in Brain']},
+    ],
+    spoon:{low:'Just a text box. No sorting. Everything goes into Brain as-is and gets sorted later.',crisis:'Hidden. Brain dumping on a crisis day adds load, not relief.'}
+  },
+  transition:{
+    icon:'🌀',
+    name:'What to Say',
+    stack:'01 — Morning Stack',
+    tagline:'knows your family. writes exactly what to say when you don\'t have words. specific to your kid, right now — not generic advice.',
+    sections:[
+      {lbl:'This morning\'s script — for Marcus',content:`<div class="wmodal-output" style="font-size:15px;line-height:1.9;font-style:italic;">"Hey Iris, today is Monday. Red shirts for you and Lily. We leave at 8. Backpack is by the door. I'll tell you the rest in the car."</div>`,tags:['t-do:Say this once','t-muted:Don\'t negotiate']},
+      {lbl:'Why this script, why today',content:`<div class="wmodal-row"><div class="wmodal-row-icon">📊</div><div class="wmodal-row-label">Pattern</div><div class="wmodal-row-val">Thursdays are reliable for Marcus — lower meltdown frequency. This script reflects that: less hedging, more confidence.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">⚓</div><div class="wmodal-row-label">Anchor</div><div class="wmodal-row-val">Weather check is included — it gives Marcus control + a familiar task, which reduces transition resistance.</div></div><div class="wmodal-row"><div class="wmodal-row-icon">⚠</div><div class="wmodal-row-label">If escalating</div><div class="wmodal-row-val">Don't add words. Say the weather line and wait. Silence is safer than elaboration for him.</div></div>`,tags:['t-muted:Based on 14 observations']},
+    ],
+    spoon:{low:'Just the script, no context. One paragraph. Say it and walk away.',crisis:'Simplified to two sentences. "Today is Thursday. We leave at 8."'}
+  }
+};
+
+function openWidget(id){
+  const w = WIDGETS[id];
+  if(!w) return;
+  const modal = document.getElementById('wmodal-content');
+  let sectionsHTML = w.sections.map(s=>`
+    <div class="wmodal-section">
+      <div class="wmodal-section-lbl">${s.lbl}</div>
+      <div class="wmodal-output">${s.content}</div>
+      ${s.tags?`<div class="wmodal-tags">${s.tags.map(t=>{const[cls,label]=t.split(':');return`<span class="wmodal-tag wmt-${cls||'muted'}">${label||t}</span>`;}).join('')}</div>`:''}
+    </div>
+  `).join('<div class="wmodal-divider"></div>');
+
+  modal.innerHTML = `
+    <div class="wmodal-header">
+      <div class="wmodal-title-wrap">
+        <div class="wmodal-eyebrow">${w.stack}</div>
+        <div class="wmodal-title">${w.icon} ${w.name}</div>
+        <div class="wmodal-sub">${w.tagline}</div>
+      </div>
+      <button class="wmodal-close" onclick="document.getElementById('wmodal-overlay').classList.remove('open')">✕</button>
+    </div>
+    <div class="wmodal-body">
+      ${sectionsHTML}
+      <div class="wmodal-divider"></div>
+      <div class="wmodal-section">
+        <div class="wmodal-section-lbl">how it adjusts on harder days</div>
+        <div class="wmodal-spoon-row">
+          <div class="wmodal-spoon-card wsc-low"><div class="wsc-lbl">low energy day</div><div class="wsc-body">${w.spoon.low}</div></div>
+          <div class="wmodal-spoon-card wsc-crisis"><div class="wsc-lbl">really hard day</div><div class="wsc-body">${w.spoon.crisis}</div></div>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('wmodal-overlay').classList.add('open');
+}
+
+function runWidget(){
+  const btn=document.getElementById('runBtn');
+  const icon=document.getElementById('runIcon');
+  const text=document.getElementById('runText');
+  const content=document.getElementById('respContent');
+  const badge=document.getElementById('respBadge');
+  const footer=document.getElementById('respFooter');
+  btn.disabled=true;icon.textContent='⟳';text.textContent="Reading Alex's family profile...";
+  content.innerHTML=`<div class="resp-empty"><div style="display:flex;gap:7px;margin-bottom:10px;"><div style="width:9px;height:9px;border-radius:50%;background:var(--cyan);animation:pulse .8s ease infinite;"></div><div style="width:9px;height:9px;border-radius:50%;background:var(--cyan);animation:pulse .8s .2s ease infinite;"></div><div style="width:9px;height:9px;border-radius:50%;background:var(--cyan);animation:pulse .8s .4s ease infinite;"></div></div><div class="resp-empty-text">Accessing marcus-sensory-profile…</div></div>`;
+  setTimeout(()=>{
+    icon.textContent='✓';text.textContent='Widget ran';badge.style.display='block';footer.style.display='flex';
+    content.innerHTML=`<div class="r-block"><div class="r-section"><div class="r-heading">What's actually happening</div><div class="r-prose">The shoes aren't the problem. Marcus is reacting to <strong>the announcement of an unexpected change</strong> — not the shoes themselves. He wears those shoes because they're safe. When "safe" feels threatened, his nervous system attaches that feeling to the nearest physical sensation. This is a <strong>transition meltdown with sensory displacement</strong>. His brain needed more runway than 10 minutes.</div></div><div class="r-section"><div class="r-heading">Right now — the next 8 minutes</div><div class="r-item"><div class="r-item-icon">1️⃣</div><div class="r-item-text"><strong>Don't negotiate the shoes.</strong> Say: "I hear you, they feel weird right now." Agree, don't argue. Don't explain.</div><div class="r-badge rb-now">do this</div></div><div class="r-item"><div class="r-item-icon">2️⃣</div><div class="r-item-text"><strong>Use the weather anchor.</strong> "Hey — what does the radar look like? Check it quick before we leave." Gives him control + a familiar thing.</div><div class="r-badge rb-fast">works fast</div></div><div class="r-item"><div class="r-item-icon">3️⃣</div><div class="r-item-text"><strong>Give him a job at Target.</strong> "You're in charge of finding the cereal aisle." Predictability + purpose.</div><div class="r-badge rb-now">do this</div></div><div class="r-item"><div class="r-item-icon">⏱</div><div class="r-item-text"><strong>Can Target wait 20 minutes?</strong> If yes — give him a real transition. If no — the above is your best path through this.</div><div class="r-badge rb-flag">your call</div></div></div><div class="r-section"><div class="r-heading">Saved to Brain</div><div class="r-code">Transition meltdown + sensory displacement observed when announcement window &lt; 20 min. Weather check reliable interrupt. Target = predictability + job required. Shoes not the trigger. June 5, 2025.</div></div></div>`;
+  },1800);
+}
+
+function submitMailingList(){
+  const email = document.getElementById('ml-email').value;
+  if(!email || !email.includes('@')) return;
+  document.getElementById('ml-success').style.display = 'block';
+  document.getElementById('ml-email').style.display = 'none';
+  document.querySelector('[onclick="submitMailingList()"]').style.display = 'none';
+  // In production, send to your email service here
+  console.log('Mailing list signup:', email);
+}
+
+function toggleWidgetLib(){
+  const more = document.getElementById('wlib-more');
+  const btn = document.getElementById('wlib-btn');
+  const hidden = more.style.display === 'none' || more.style.display === '';
+  if(hidden){
+    more.style.display = 'grid';
+    more.style.gridTemplateColumns = 'repeat(4,1fr)';
+    btn.textContent = 'Show less ↑';
+  } else {
+    more.style.display = 'none';
+    btn.textContent = 'See all 60 widgets ↓';
+  }
+}
+</script>
+</body>
+</html>
